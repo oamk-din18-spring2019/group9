@@ -7,12 +7,12 @@ class Login extends CI_Controller
 
   function __construct()
   {
-    
+
   }
 
   function index(){
     $data['page']='login/login_form';
-    $this->load->view('menu/content', $data);
+    $this->load->view('', $data);
   }
 
   function login(){
@@ -25,7 +25,7 @@ class Login extends CI_Controller
       $_SESSION['logged_in'] = true;
       $_SESSION['username'] = $givenUsername;
       $data['page'] = 'login/personal_page';
-      $this->load->view('menu/content', $data);
+      $this->load->view('', $data);
     }
     else {
       $_SESSION['logged_in'] = false;
@@ -36,7 +36,7 @@ class Login extends CI_Controller
       $_SESSION['logged_in'] = false;
       $_SESSION['username'] = "";
       $data['page'] = 'login/logout_page';
-      $this->load->view('menu/content', $data);
+      $this->load->view('', $data);
     }
   }
 }
