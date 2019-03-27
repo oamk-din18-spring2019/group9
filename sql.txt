@@ -1,0 +1,41 @@
+CREATE database hotel;
+
+use hotel;
+
+CREATE TABLE owner(
+owner_id SMALLINT PRIMARY KEY,
+owner_fname VARCHAR(255),
+owner_lname VARCHAR(255),
+owner_phone VARCHAR(255),
+owner_username VARCHAR(255),
+owner_password VARCHAR(255),
+owner_birthday VARCHAR(255)) Engine=InnoDB;
+
+
+CREATE TABLE animal(
+animal_id SMALLINT PRIMARY KEY,
+animal_name VARCHAR(255),
+animal_species VARCHAR(255),
+animal_description VARCHAR(255),
+animal_food VARCHAR(255),
+animal_medical VARCHAR(255),
+animal_instruction VARCHAR(255),
+animal_arrival VARCHAR(255),
+animal_depart VARCHAR(255)) Engine=InnoDB;
+
+CREATE TABLE staff(
+staff_id SMALLINT PRIMARY KEY,
+staff_fname VARCHAR(255),
+staff_lname VARCHAR(255),
+staff_username VARCHAR(255),
+staff_password VARCHAR(255),
+staff_hours VARCHAR(255)) Engine=InnoDB;
+
+CREATE TABLE stays(
+owner_id SMALLINT PRIMARY KEY,
+animal_id SMALLINT,
+stay_price VARCHAR(255),
+FOREIGN KEY(owner_id) REFERENCES owner(owner_id)
+	ON DELETE RESTRICT ON UPDATE CASCADE,
+FOREIGN KEY(animal_id) REFERENCES animal(animal_id)
+	ON DELETE RESTRICT ON UPDATE CASCADE) Engine=InnoDB;
