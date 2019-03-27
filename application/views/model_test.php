@@ -1,4 +1,4 @@
 <?php
-echo $message;
+echo "this is a test";
 
 ?>

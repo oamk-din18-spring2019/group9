@@ -7,4 +7,9 @@ class Test extends CI_Controller{
     $data['message']=$this->Test_model->saysomething();
     $this->load->view('model_test', $data);
   }
+
+  public function index()
+  {
+    $this->load->view('model_test');
+  }
 }
