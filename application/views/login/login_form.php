@@ -1,4 +1,4 @@
-<form class="" action="<?php echo site_url('login/login'); ?>" method="post">
+<form class="" action="index.html" method="post">
   <label for="">username</label><br>
   <input type="text" name="username" value=""><br>
   <label for="">password</label><br>
