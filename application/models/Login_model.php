@@ -5,7 +5,7 @@ defined ('BASEPATH') OR exit('No direct script access allowed');
 class Login_model extends CI_Model{
 
   public function __construct(){
-    parent::__construct();
+
   }
 }
 {
@@ -13,7 +13,7 @@ class Login_model extends CI_Model{
   public function getPassword($givenUsername)
   {
     $this->db->select('password');
-    $this->db->form('hotel');
+    $this->db->from('hotel');
     $this->db-where('username', $givenUsername);
     return $this->db->get()->row('password');
   }
