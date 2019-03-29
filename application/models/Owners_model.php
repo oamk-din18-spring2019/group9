@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -14,3 +13,4 @@ class Owners_model extends CI_Controller{
   {
 
   }
+}
