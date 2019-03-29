@@ -9,11 +9,6 @@ class Owners_model extends CI_Controller{
     //Codeigniter : Write Less Do More
   }
 
-  function index()
-  {
-
-  }
-
   function add_user($insert_data){
     $this->db->db_debug = false;
     $this->db->insert('hotel',$insert_data);
