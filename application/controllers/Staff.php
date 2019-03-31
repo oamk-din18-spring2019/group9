@@ -8,12 +8,7 @@ class staff extends CI_Controller{
     parent::__construct();
     $this->load->('');
   }
-  public function getStaff(){
-    $this->db->select('idStaff,fname,lname,username,');
-    $this->db->from('staff');
-    $this->db->
-    return $this->db->get()->result_array();
-  }
+
 
   function add_staff(){
       //print_r($this->input->post());
@@ -31,5 +26,8 @@ class staff extends CI_Controller{
         $this->load->view('menu/content',$data);
 
       }
-
+      function add_form(){
+        $data['page']='staff/add_form';
+        $this->load->view('menu/content',$data);
+      }
   ?>
