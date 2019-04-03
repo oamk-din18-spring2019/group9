@@ -3,14 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Owners_model extends CI_Controller{
 
-  public function __construct()
-  {
-    parent::__construct();
-    //Codeigniter : Write Less Do More
-  }
+  function add_owner($insert_data){
+    $this->db->db_debug = false;
+    $this->db->insert('owner',$insert_data);
+    $test=$this->db->affected_rows();
 
-  function index()
-  {
+    if($test==1){
+      return true;
+    }
+    else {
+      return false;
+    }
 
   }
 

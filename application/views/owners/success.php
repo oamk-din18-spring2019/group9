@@ -1,1 +1,2 @@
-<p>New owner inserted.</p>
+<p>Message</p>
+<?php echo $message; ?>

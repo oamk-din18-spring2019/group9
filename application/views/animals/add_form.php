@@ -1,4 +1,4 @@
-<h2>Add animal</h2>
+<h2>Add your pet's information</h2>
 <form class="" action="index.html" method="post">
   <label for="">Animal ID</label><br>
   <input type="text" name="animal_id" value=""><br>
@@ -29,7 +29,7 @@
 
   <label for="">Your pet's special caring instructions</label><br>
   <textarea id="instructions" name="instructions"></textarea>
-  <br>
+  <br><br>
 
   <input type="submit" name="" value="Confirm">
 
