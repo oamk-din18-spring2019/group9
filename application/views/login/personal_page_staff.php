@@ -1,1 +1,1 @@
-<?php echo "Welcome".$_SESSION['staff_username']; ?>
+<?php echo "Welcome ".$_SESSION['staff_username']; ?>
