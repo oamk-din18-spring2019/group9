@@ -11,9 +11,9 @@ class Owner extends CI_Controller{
 
     function add_form(){
     //$data['page']='owners/add_form';
-    //$this->load->view('menu/content',$data);
     $data['page']='owners/add_form';
-    $this->load->view('owners/add_form');
+    $this->load->view('menu/content',$data);
+    //$this->load->view('owners/add_form');
     }
     function add_owner(){
       //print_r($this->input->post());
