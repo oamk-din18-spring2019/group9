@@ -12,7 +12,7 @@
 
     </div>
 
-    <form class="name" style="height:100%;">
+    <form id=sourceForm action="" class="name" style="height:100%;">
         <fieldset >
 
             <div class="animal"><p>PET</p></div>
@@ -27,9 +27,9 @@
         <fieldset class="reservation">
            <div class="room" ><legend>Booking details</legend></div>
             <label for="date">Check-in date</label>
-            <input type="date" name="date" min="2019-01-01">
+            <input type="date" name="date" min="2019-01-01" onchange="showArrival()">
             <label for="date">Check-out date</label>
-            <input type="date" name="date" min="2019-01-01">
+            <input type="date" name="date" min="2019-01-01" onchange="showDeparture()">
         </fieldset>
         <br>
 <?php
