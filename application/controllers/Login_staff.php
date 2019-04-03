@@ -34,12 +34,12 @@ class Login_staff extends CI_Controller
     }
 
   }
-/*
+
   function logout(){
     $_SESSION['logged_in'] = false;
     $_SESSION['staff_username'] = "";
-    $data['page'] = 'login/logout_page';
-    $this->load->view('menu/form', $data);
+    $data['page'] = 'login/logout_page_staff';
+    $this->load->view('menu/content', $data);
   }
-  */
+
 }

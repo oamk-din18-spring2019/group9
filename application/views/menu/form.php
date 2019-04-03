@@ -35,23 +35,45 @@
 <?php
     echo '<li> <a href="' . site_url('') . '">Search</a> </li>';
     echo" <br>";
+
     echo '<li> <a href="' . site_url('') . '">Book now</a> </li>';
     echo" <br>";
+
     echo '<li> <a href="' . site_url('staff/show_staff') . '">view staff</a> </li>';
     echo" <br>";
-    echo '<li> <a href="' . site_url('') . '">view owners</a> </li>';
+
+    echo '<li> <a href="' . site_url('owner/show_owner') . '">view owners</a> </li>';
     echo" <br>";
+
     echo '<li> <a href="' . site_url('') . '">view animals</a> </li>';
     echo" <br>";
+
     echo '<li> <a href="' . site_url('') . '">view stays</a> </li>';
     echo" <br>";
-    echo '<li> <a href="' . site_url('login_user/example') . '">User Login</a> </li>';
+
+    echo '<li> <a href="' . site_url('owner/add_owner_user_form') . '">Sign up</a> </li>';
     echo" <br>";
+
     echo '<li> <a href="' . site_url('staff/add_staff_user_form') . '">Add staff user</a> </li>';
     echo" <br>";
-    echo '<li> <a href="' . site_url('login_staff/example') . '">Staff Login</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('login/logout') . '">Logout</a> </li>';
+
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
+      echo '<li> <a href="' . site_url('login_owner/login') . '">Owner Login</a> </li>';
+      echo" <br>";
+    }
+    else {
+      echo '<li> <a href="' . site_url('login_owner/logout') . '">Owner Logout</a> </li>';
+      echo "<br>";
+    }
+
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
+      echo '<li> <a href="' . site_url('login_staff/login') . '">Staff Login</a> </li>';
+      echo" <br>";
+    }
+    else {
+      echo '<li> <a href="' . site_url('login_staff/logout') . '">Staff Logout</a> </li>';
+
+    }
 
 ?>
 
