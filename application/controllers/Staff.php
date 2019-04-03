@@ -1,13 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-class staff extends CI_Controller{
+class Staff extends CI_Controller{
 
   public function __construct()
   {
-    parent::__construct();
-    $this->load->('');
+
   }
+  /*
   public function getStaff(){
     $this->db->select('idStaff,fname,lname,username,');
     $this->db->from('staff');
@@ -23,13 +22,33 @@ class staff extends CI_Controller{
         "lname" => $this->input->post('ln'),
         "email" => $this->input->post('em')
         }
-
+*/
         function show_staff()
       {
-        $data['staff']=$this->Staff_model->getStaff();
+        $this->load->model('Staff_model');
+        $data['staff']=$this->Staff_model->get_staff_users();
         $data['page']='staff/show_staff';
         $this->load->view('menu/content',$data);
 
       }
 
-  ?>
+      function add_staff_user_form(){
+        $data['page']='staff/add_staff_user_form';
+        $this->load->view('menu/content',$data);
+      }
+      function add_staff_user(){
+        //print_r($this->input->post());
+        $this->load->model('Staff_model');
+        $hashedPassword=password_hash($this->input->post('staff_password'),PASSWORD_DEFAULT);
+        $insert_data=array(
+          "staff_id"=>$this->input->post('staff_id'),
+          "staff_fname"=>$this->input->post('staff_fname'),
+          "staff_lname"=>$this->input->post('staff_lname'),
+          "staff_username"=>$this->input->post('staff_username'),
+          "staff_password"=>$hashedPassword,
+          "staff_hours"=>$this->input->post('staff_hours')
+        );
+        $result=$this->Staff_model->add_staff_user($insert_data);
+        $this->load->view('menu/content',$data);
+      }
+}
