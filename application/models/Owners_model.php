@@ -13,4 +13,5 @@ class Owners_model extends CI_Controller{
   {
 
   }
+
 }

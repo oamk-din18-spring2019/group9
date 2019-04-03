@@ -20,15 +20,15 @@
   <br>
 
   <label for="">Feeding instructions</label><br>
-  <textarea id="description" name="food"></textarea>
+  <textarea id="food" name="food"></textarea>
   <br>
 
   <label for="">If your pet has medication, describe them here</label><br>
-  <textarea id="description" name="medication"></textarea>
+  <textarea id="medication" name="medication"></textarea>
   <br>
 
   <label for="">Your pet's special caring instructions</label><br>
-  <textarea id="description" name="instructions"></textarea>
+  <textarea id="instructions" name="instructions"></textarea>
   <br>
 
   <input type="submit" name="" value="Confirm">
