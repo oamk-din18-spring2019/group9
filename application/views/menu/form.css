@@ -1,0 +1,83 @@
+.main{
+    margin-right: auto;
+    margin-left: auto;
+    left:0%;
+    position: static;
+
+}
+.animal{
+ font-weight: bold;
+    font-style: italic;
+    font-style: 20px ;
+font-size: 30px;
+letter-spacing: 5px;
+color:white;
+font-family:'Times New Roman', Times, serif;
+}
+
+.pet{
+    font-style: italic;
+    font-style: 20px ;
+font-size: 25px;
+letter-spacing: 5px;
+color:white;
+font-family:'Times New Roman', Times, serif;
+}
+
+.reservation{
+    font-style: italic;
+    font-style: 20px ;
+font-size: 30px;
+letter-spacing: 5px;
+color:white;
+font-family:'Times New Roman', Times, serif;
+
+}
+input{
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+.name{
+
+    background:black;
+    opacity: 0.4;
+    font-size: 20px;
+    position:absolute;
+    top:0%;
+    left:0%;
+    right:0%;
+    bottom:0%;
+    color:white;
+
+
+}
+button{
+    width:350px;
+    left:37%;
+    background-color: lightyellow ;
+    position: center;
+    border:none;
+    position:relative;
+    height:35px;
+    font-size:30px;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+  button:hover{
+    background: lightskyblue;
+    color:black;
+  }
+ 
+  button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  button:hover:before,button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
