@@ -6,7 +6,6 @@ class staff extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('Staff_model');
   }
 
 
@@ -17,16 +16,20 @@ class staff extends CI_Controller{
 
   function show_staff()
   {
-    $data['staff']=$this->Staff_model->getStaff();
-    $data['page']='staff/show_staff';
-    $this->load->view('Staff/add_form',$data);
+      $this->load->model('staff_model');
+      $data['owner']=$this->staff_model->get_staff_users();
+      $data['page']='staff/show_staff';
+      $this->load->view('staff/show_staff',$data);
+
+
+
   }
 
       function show_owners()
       {
-        $data['owners']=$this->Owners_model->getowners();
+        $data['owners']=$this->Owners_model->get_owner_users();
         $data['page']='owners/show_owners';
-        $this->load->view('menu/content',$data);
+        $this->load->view('owners/show_owner',$data);
 
       }
 
@@ -46,6 +49,7 @@ class staff extends CI_Controller{
     $this->load->view('menu/content',$data);
 
   }
+
 }
 
   ?>

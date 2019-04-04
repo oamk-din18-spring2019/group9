@@ -13,7 +13,11 @@ class Staff_model extends CI_Model{
     $this->db->from('staff');
     return $this->db->get()->result_array();
   }
-  
 
-}
+  function get_staff_users(){
+      $this->db->select('*');
+      $this->db->from('staff');
+      return $this->db->get()->result_array();
+    }
+  }
 ?>
