@@ -1,17 +1,22 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Owners_model extends CI_Controller{
 
-  public function __construct()
-  {
-    parent::__construct();
-    //Codeigniter : Write Less Do More
+class Owners_model extends CI_Model{
+
+  function get_owner_users(){
+      $this->db->select('*');
+      $this->db->from('owner');
+      return $this->db->get()->result_array();
+    }
+    function add_owner_user($insert_data){
+      $this->db->db_debug = false;
+      $this->db->insert('owner',$insert_data);
+      $test=$this->db->affected_rows();
+      if($test==1){
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
   }
-
-  function index()
-  {
-
-  }
-
-}
