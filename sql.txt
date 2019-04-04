@@ -39,3 +39,5 @@ FOREIGN KEY(owner_id) REFERENCES owner(owner_id)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
 FOREIGN KEY(animal_id) REFERENCES animal(animal_id)
 	ON DELETE RESTRICT ON UPDATE CASCADE) Engine=InnoDB;
+
+grant all on hotel.* to 'hoteluser'@'localhost' IDENTIFIED BY 'hotelpass';
