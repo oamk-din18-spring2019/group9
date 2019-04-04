@@ -40,9 +40,9 @@
             <input type="date" name="date" min="2019-01-01">
             <br>
 
-            <?php     echo '<li> <a href="' . site_url('') . '">Search</a> </li>';
+            <?php     echo("<button onclick=\"location.href=''\">Search</button>");
                       echo" <br>";
-                      echo '<li> <a href="' . site_url('') . '">Book now</a> </li>';
+                      echo("<button onclick=\"location.href=''\">Book now</button>");
                       echo" <br>";
             ?>
         </fieldset>
@@ -50,45 +50,47 @@
 <?php
 if (($_SESSION['logged_in'] == true)) {
       if ($_SESSION['owner_logged_in'] == true) {
-        echo '<li> <a href="' . site_url('') . '">Make new reservation</a> </li>';
+        echo("<button onclick=\"location.href=''\">Make new reservation</button>");
         echo" <br>";
-        echo '<li> <a href="' . site_url('login_owner/logout') . '">Owner Logout</a> </li>';
+        echo("<button onclick=\"location.href='login_owner/logout'\">Owner Logout</button>");
         echo "<br>";
+
       }
 
 
     //
 
       else if ($_SESSION['staff_logged_in'] == true) {
-        echo '<li> <a href="' . site_url('staff/show_staff') . '">view staff</a> </li>';
+        echo("<button onclick=\"location.href='staff/show_staff'\">view staff</button>");
         echo" <br>";
 
-        echo '<li> <a href="' . site_url('owner/show_owner') . '">view owners</a> </li>';
+        echo("<button onclick=\"location.href='owner/show_owner'\">view owners</button>");
         echo" <br>";
 
-        echo '<li> <a href="' . site_url('') . '">view animals</a> </li>';
+        echo("<button onclick=\"location.href=''\">view animals</button>");
         echo" <br>";
 
-        echo '<li> <a href="' . site_url('') . '">view stays</a> </li>';
+        echo("<button onclick=\"location.href=''\">view stays</button>");
         echo" <br>";
-        echo '<li> <a href="' . site_url('login_staff/logout') . '">Staff Logout</a> </li>';
 
+        echo("<button onclick=\"location.href='login_staff/logout'\">Staff Logout</button>");
+        echo "<br>";
       }
 }
 
 else {
 
 
-  echo '<li> <a href="' . site_url('owner/add_owner_user_form') . '">Sign up</a> </li>';
+  echo("<button onclick=\"location.href='owner/add_owner_user_form'\">Create a new account</button>");
   echo" <br>";
 
-  echo '<li> <a href="' . site_url('staff/add_staff_user_form') . '">Add staff user</a> </li>';
+  echo("<button onclick=\"location.href='staff/add_staff_user_form'\">Add staff user</button>");
   echo" <br>";
 
-  echo '<li> <a href="' . site_url('login_owner/login') . '">Owner Login</a> </li>';
+  echo("<button onclick=\"location.href='login_owner/login'\">Owner Login</button>");
   echo" <br>";
 
-  echo '<li> <a href="' . site_url('login_staff/login') . '">Staff Login</a> </li>';
+  echo("<button onclick=\"location.href='login_staff/login'\">Staff Login</button>");
   echo" <br>";
 }
 
