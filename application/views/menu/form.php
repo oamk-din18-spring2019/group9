@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>RESERVATION</title>
     <link rel="stylesheet" type="text/css" href="form.css">
-    <script src="<?php echo base_url('js/animalForm.js'); ?>" charset="utf-8"></script>
+    <!--<script src="<?php echo base_url('js/animalForm.js'); ?>" charset="utf-8"></script>-->
 </head>
 <body>
     <div class="main">
