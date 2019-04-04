@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>RESERVATION</title>
-    <link rel="stylesheet" type="text/css" href="form.css">
+    <!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css'); ?>">-->
 
 </head>
 <body>
+
     <div class="main">
       <h1>pet rest</h1>
-
+      <?php
+      if(!empty($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
+        //do nothing
+      }
+      else {
+        echo "Guest";
+      }
+      ?>
     </div>
 
     <form class="name" style="height:100%;">
@@ -30,50 +38,64 @@
             <input type="date" name="date" min="2019-01-01">
             <label for="date">Check-out date</label>
             <input type="date" name="date" min="2019-01-01">
+            <br>
+
+            <?php     echo '<li> <a href="' . site_url('') . '">Search</a> </li>';
+                      echo" <br>";
+                      echo '<li> <a href="' . site_url('') . '">Book now</a> </li>';
+                      echo" <br>";
+            ?>
         </fieldset>
         <br>
 <?php
-    echo '<li> <a href="' . site_url('') . '">Search</a> </li>';
-    echo" <br>";
+if (($_SESSION['logged_in'] == true)) {
+      if ($_SESSION['owner_logged_in'] == true) {
+        echo '<li> <a href="' . site_url('') . '">Make new reservation</a> </li>';
+        echo" <br>";
+        echo '<li> <a href="' . site_url('login_owner/logout') . '">Owner Logout</a> </li>';
+        echo "<br>";
+      }
 
-    echo '<li> <a href="' . site_url('') . '">Book now</a> </li>';
-    echo" <br>";
 
-    echo '<li> <a href="' . site_url('staff/show_staff') . '">view staff</a> </li>';
-    echo" <br>";
+    //
 
-    echo '<li> <a href="' . site_url('owner/show_owner') . '">view owners</a> </li>';
-    echo" <br>";
+      else if ($_SESSION['staff_logged_in'] == true) {
+        echo '<li> <a href="' . site_url('staff/show_staff') . '">view staff</a> </li>';
+        echo" <br>";
 
-    echo '<li> <a href="' . site_url('') . '">view animals</a> </li>';
-    echo" <br>";
+        echo '<li> <a href="' . site_url('owner/show_owner') . '">view owners</a> </li>';
+        echo" <br>";
 
-    echo '<li> <a href="' . site_url('') . '">view stays</a> </li>';
-    echo" <br>";
+        echo '<li> <a href="' . site_url('') . '">view animals</a> </li>';
+        echo" <br>";
 
-    echo '<li> <a href="' . site_url('owner/add_owner_user_form') . '">Sign up</a> </li>';
-    echo" <br>";
+        echo '<li> <a href="' . site_url('') . '">view stays</a> </li>';
+        echo" <br>";
+        echo '<li> <a href="' . site_url('login_staff/logout') . '">Staff Logout</a> </li>';
 
-    echo '<li> <a href="' . site_url('staff/add_staff_user_form') . '">Add staff user</a> </li>';
-    echo" <br>";
+      }
+}
 
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
-      echo '<li> <a href="' . site_url('login_owner/login') . '">Owner Login</a> </li>';
-      echo" <br>";
-    }
-    else {
-      echo '<li> <a href="' . site_url('login_owner/logout') . '">Owner Logout</a> </li>';
-      echo "<br>";
-    }
+else {
 
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
-      echo '<li> <a href="' . site_url('login_staff/login') . '">Staff Login</a> </li>';
-      echo" <br>";
-    }
-    else {
-      echo '<li> <a href="' . site_url('login_staff/logout') . '">Staff Logout</a> </li>';
 
-    }
+  echo '<li> <a href="' . site_url('owner/add_owner_user_form') . '">Sign up</a> </li>';
+  echo" <br>";
+
+  echo '<li> <a href="' . site_url('staff/add_staff_user_form') . '">Add staff user</a> </li>';
+  echo" <br>";
+
+  echo '<li> <a href="' . site_url('login_owner/login') . '">Owner Login</a> </li>';
+  echo" <br>";
+
+  echo '<li> <a href="' . site_url('login_staff/login') . '">Staff Login</a> </li>';
+  echo" <br>";
+}
+
+
+
+
+
 
 ?>
 

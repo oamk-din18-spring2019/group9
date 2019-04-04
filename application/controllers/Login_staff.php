@@ -17,6 +17,7 @@ class Login_staff extends CI_Controller
   }
 */
   function login(){
+    $_SESSION['logged_in'] = false;
     $this->load->model('Login_model_staff');
     $givenStaffUser = $this->input->post('staff_username');
     $givenStaffPassword = $this->input->post('staff_password');
@@ -24,12 +25,13 @@ class Login_staff extends CI_Controller
 
     if (password_verify($givenStaffPassword, $db_password)) {
       $_SESSION['logged_in'] = true;
+      $_SESSION['staff_logged_in'] = true;
       $_SESSION['staff_username'] = $givenStaffUser;
       $data['page'] = 'login/personal_page_staff';
       $this->load->view('menu/content', $data);
     }
     else {
-      $_SESSION['logged_in'] = false;
+      $_SESSION['staff_logged_in'] = false;
       redirect('login_staff/menu');
     }
 
@@ -37,6 +39,7 @@ class Login_staff extends CI_Controller
 
   function logout(){
     $_SESSION['logged_in'] = false;
+    $_SESSION['staff_logged_in'] = false;
     $_SESSION['staff_username'] = "";
     $data['page'] = 'login/logout_page_staff';
     $this->load->view('menu/content', $data);
