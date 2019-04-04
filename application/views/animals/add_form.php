@@ -6,14 +6,21 @@
   <label for="">Name</label><br>
   <input type="text" name="name" value=""><br>
 
-  <label for="">Species</label><br>
-  <input type="text" name="species" value=""><br>
+<div class="animal">
+  Animal<br>
+  <label for="Cat">Cat</label>
+  <input id="cat" type="radio" name="cat" value="">
+
+  <label for="Dog">Dog</label>
+  <input id="dog" type="radio" name="dog" value=""><br>
+
+</div>
 
   <label for="">Arrival date</label><br>
   <input type="date" id="selected_arrival" name="arrival" value="<?php echo $set_arrival; ?>"><br>
 
   <label for="">Departure date</label><br>
-  <input type="date" id="selected_departure" name="depart" value=""><br>
+  <input type="date" id="selected_departure" name="depart" value="<?php echo $set_depart; ?>"><br>
 
   <label for="description">Pet description</label><br>
   <textarea id="description" name="description"></textarea>

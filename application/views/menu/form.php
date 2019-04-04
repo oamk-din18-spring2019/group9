@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>RESERVATION</title>
-<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="form.css">
     <!--<script src="<?php echo base_url('js/animalForm.js'); ?>" charset="utf-8"></script>-->
-=======
   <!--  <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css'); ?>"> -->
-
->>>>>>> master
 </head>
 <body>
 
@@ -40,12 +36,9 @@
         <fieldset class="reservation">
            <div class="room" ><legend>Booking details</legend></div>
             <label for="date">Check-in date</label>
-            <input id="arrival" type="date" name="arrival" min="2019-01-01" onchange="showArrival()">
+            <input id="arrival" type="date" name="arrival" min="2019-01-01">
             <label for="date">Check-out date</label>
-<<<<<<< HEAD
-            <input id="depart" type="date" name="depart" min="2019-01-01" onchange="showDeparture()">
-=======
-            <input type="date" name="date" min="2019-01-01">
+            <input id="depart" type="date" name="depart" min="2019-01-01">
             <br>
 
             <?php     echo("<button onclick=\"location.href=''\">Search</button>");
@@ -53,33 +46,11 @@
                       echo("<button onclick=\"location.href='owner/add_owner_user_form'\">Book now</button>");
                       echo" <br>";
             ?>
->>>>>>> master
         </fieldset>
         <br>
         <input type="submit" name="" value="Click">
     </form>
 <?php
-<<<<<<< HEAD
-    echo '<li> <a href="' . site_url('') . '">Search</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('owner/add_form') . '">Book now</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('staff/show_staff') . '">view staff</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('') . '">view owners</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('') . '">view animals</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('') . '">view stays</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('login_user/example') . '">User Login</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('staff/add_staff_user_form') . '">Add staff user</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('login_staff/example') . '">Staff Login</a> </li>';
-    echo" <br>";
-    echo '<li> <a href="' . site_url('login/logout') . '">Logout</a> </li>';
-=======
 if (($_SESSION['logged_in'] == true)) {
       if ($_SESSION['owner_logged_in'] == true) {
         echo("<button onclick=\"location.href=''\">Make new reservation</button>");
@@ -129,8 +100,6 @@ else {
 
 
 
-
->>>>>>> master
 
 ?>
 

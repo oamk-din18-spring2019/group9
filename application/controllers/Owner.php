@@ -9,7 +9,6 @@ class Owner extends CI_Controller{
     //Codeigniter : Write Less Do More
   }
 
-<<<<<<< HEAD
     function index(){
     //$data['page']='owners/add_form';
     $data['page']='owners/start';
@@ -43,16 +42,16 @@ class Owner extends CI_Controller{
     }
     function atest(){
         $data['set_arrival']=$this->input->post('arrival');
+        $data['set_depart']=$this->input->post('depart');
         $this->load->view('animals/add_form',$data);
     }
-=======
+
   function show_owner()
 {
   $this->load->model('Owners_model');
   $data['owner']=$this->Owners_model->get_owner_users();
   $data['page']='owners/show_owner';
   $this->load->view('menu/content',$data);
->>>>>>> master
 
 }
 
