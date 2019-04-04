@@ -16,7 +16,7 @@ class Stay extends CI_Controller
   {
     $data['stay']=$this->Stay_model->getStay();
     $data['page']='stay/show_stay';
-    $this->load->view('menu/content', $data);
+    $this->load->view('menu/form', $data);
   }
 function add_stay(){
   //print_r($this->input->post());
@@ -38,6 +38,6 @@ function add_stay(){
     $data['message']="Something went wrong!";
   }
   $data['page']='Stay/add_info';
-  $this->load->view('menu/content',$data);
+  $this->load->view('menu/form',$data);
 }
 }
