@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>RESERVATION</title>
-    <!--<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css'); ?>">-->
+  <!--  <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css'); ?>"> -->
 
 </head>
 <body>
@@ -42,7 +42,7 @@
 
             <?php     echo("<button onclick=\"location.href=''\">Search</button>");
                       echo" <br>";
-                      echo("<button onclick=\"location.href=''\">Book now</button>");
+                      echo("<button onclick=\"location.href='owner/add_owner_user_form'\">Book now</button>");
                       echo" <br>";
             ?>
         </fieldset>
