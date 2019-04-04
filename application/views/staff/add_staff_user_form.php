@@ -1,6 +1,6 @@
 
 <h3>Add staff user</h3>
-<?php  echo site_url('staff/add_staff_user'); ?>
+
 <p>
 <form class="" action="<?php  echo site_url('staff/add_staff_user'); ?>" method="post">
 <label for="">ID</label> <br>
@@ -14,7 +14,7 @@
 <label for="">Password</label> <br>
 <input type="text" name="staff_password" value=""> <br>
 <label for="">Hours</label> <br>
-<input type="number" name="staff_hours" value=""> <br>
+<input type="number" name="staff_hours" value=""> <br><br>
 <input type="submit" name="" value="Add">
 </form>
 </p>
