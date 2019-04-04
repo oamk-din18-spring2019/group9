@@ -48,7 +48,7 @@
         </fieldset>
         <br>
 <?php
-if ($_SESSION['logged_in'] == true) {
+if (($_SESSION['logged_in']) == true) {
       if ($_SESSION['owner_logged_in'] == true) {
         echo("<button onclick=\"location.href=''\">Make new reservation</button>");
         echo" <br>";

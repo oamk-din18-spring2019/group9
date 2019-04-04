@@ -28,7 +28,7 @@ class Staff extends CI_Controller{
         $this->load->model('Staff_model');
         $data['staff']=$this->Staff_model->get_staff_users();
         $data['page']='staff/show_staff';
-        $this->load->view('menu/content',$data);
+        $this->load->view('menu/form',$data);
 
       }
 
