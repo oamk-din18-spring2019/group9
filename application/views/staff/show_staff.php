@@ -1,5 +1,5 @@
 
-<h2>Staff</h2>
+<h2> show Staff</h2>
 <table border="1">
   <thead>
     <tr><th>ID</th><th>Firstname</th><th>Lastname</th><th>Work hours</th></tr>
@@ -7,7 +7,6 @@
   <tbody>
 
     <?php
-    $staff=staff
     foreach ($staff as $row) {
       echo '<tr>';
        echo '<td>'.$row['staff_id'].'</td>';

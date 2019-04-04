@@ -16,8 +16,8 @@ class staff extends CI_Controller{
 
   function show_staff()
   {
-      $this->load->model('staff_model');
-      $data['owner']=$this->staff_model->get_staff_users();
+      $this->load->model('Staff_model');
+      $data['staff']=$this->Staff_model->get_staff_users();
       $data['page']='staff/show_staff';
       $this->load->view('staff/show_staff',$data);
 
@@ -27,7 +27,7 @@ class staff extends CI_Controller{
 
       function show_owners()
       {
-        $data['owners']=$this->Owners_model->get_owner_users();
+        $data['Owners']=$this->Owners_model->get_owner_users();
         $data['page']='owners/show_owners';
         $this->load->view('owners/show_owner',$data);
 
