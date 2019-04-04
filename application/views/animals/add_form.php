@@ -10,7 +10,7 @@
   <input type="text" name="species" value=""><br>
 
   <label for="">Arrival date</label><br>
-  <input type="date" id="selected_arrival" name="arrival" value=""><br>
+  <input type="date" id="selected_arrival" name="arrival" value="<?php echo $set_arrival; ?>"><br>
 
   <label for="">Departure date</label><br>
   <input type="date" id="selected_departure" name="depart" value=""><br>

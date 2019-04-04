@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>RESERVATION</title>
     <link rel="stylesheet" type="text/css" href="form.css">
-
+    <script src="<?php echo base_url('js/animalForm.js'); ?>" charset="utf-8"></script>
 </head>
 <body>
     <div class="main">
@@ -12,7 +12,7 @@
 
     </div>
 
-    <form id=sourceForm action="" class="name" style="height:100%;">
+    <form id=sourceForm action="<?php echo site_url('owner/atest');?>" method="post" class="name" style="height:100%;">
         <fieldset >
 
             <div class="animal"><p>PET</p></div>
@@ -27,15 +27,17 @@
         <fieldset class="reservation">
            <div class="room" ><legend>Booking details</legend></div>
             <label for="date">Check-in date</label>
-            <input type="date" name="date" min="2019-01-01" onchange="showArrival()">
+            <input id="arrival" type="date" name="arrival" min="2019-01-01" onchange="showArrival()">
             <label for="date">Check-out date</label>
-            <input type="date" name="date" min="2019-01-01" onchange="showDeparture()">
+            <input id="depart" type="date" name="depart" min="2019-01-01" onchange="showDeparture()">
         </fieldset>
         <br>
+        <input type="submit" name="" value="Click">
+    </form>
 <?php
     echo '<li> <a href="' . site_url('') . '">Search</a> </li>';
     echo" <br>";
-    echo '<li> <a href="' . site_url('') . '">Book now</a> </li>';
+    echo '<li> <a href="' . site_url('owner/add_form') . '">Book now</a> </li>';
     echo" <br>";
     echo '<li> <a href="' . site_url('staff/show_staff') . '">view staff</a> </li>';
     echo" <br>";
@@ -55,6 +57,5 @@
 
 ?>
 
-    </form>
-<hr>
+
 <hr>

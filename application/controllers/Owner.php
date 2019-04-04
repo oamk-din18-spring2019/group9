@@ -9,6 +9,12 @@ class Owner extends CI_Controller{
     //Codeigniter : Write Less Do More
   }
 
+    function index(){
+    //$data['page']='owners/add_form';
+    $data['page']='owners/start';
+    $this->load->view('menu/content',$data);
+    //$this->load->view('owners/add_form');
+    }
     function add_form(){
     //$data['page']='owners/add_form';
     $data['page']='owners/add_form';
@@ -17,6 +23,7 @@ class Owner extends CI_Controller{
     }
     function add_owner(){
       //print_r($this->input->post());
+
       $this->load->model('Owners_model');
       $hashedPassword=password_hash($this->input->post('password'),PASSWORD_DEFAULT);
       $insert_data=array(
@@ -30,8 +37,12 @@ class Owner extends CI_Controller{
       );
       $result=$this->Owners_model->add_owner($insert_data);
       $page=$result ? 'animals/add_form' : 'owners/error';
-      $this->load->view($page);
+      $this->load->view($page,$data);
 
+    }
+    function atest(){
+        $data['set_arrival']=$this->input->post('arrival');
+        $this->load->view('animals/add_form',$data);
     }
 
 }
