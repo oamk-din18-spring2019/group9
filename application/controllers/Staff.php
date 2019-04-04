@@ -4,7 +4,7 @@ class Staff extends CI_Controller{
 
   public function __construct()
   {
-
+    parent::__construct();
   }
   /*
   public function getStaff(){
@@ -49,6 +49,7 @@ class Staff extends CI_Controller{
           "staff_hours"=>$this->input->post('staff_hours')
         );
         $result=$this->Staff_model->add_staff_user($insert_data);
+        $data['page']='staff/add_staff_user_form';
         $this->load->view('menu/content',$data);
       }
 }
