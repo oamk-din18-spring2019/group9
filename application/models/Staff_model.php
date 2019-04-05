@@ -19,4 +19,10 @@ class Staff_model extends CI_Model{
         return false;
       }
     }
+
+    function getNewId(){
+      $this->db->select('max(staff_id) as id');
+      $this->db->from('staff');
+      return $this->db->get()->row('id');
+    }
   }

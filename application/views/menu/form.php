@@ -53,7 +53,7 @@
         <br>
     <div class="">
       <?php
-      if (($_SESSION['logged_in'] == true)) {
+      if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
             if ($_SESSION['owner_logged_in'] == true) {
               echo '<a href="'.site_url('').'"><span class="btn">Make new reservation</btn> </a>';
               echo" <br>";
