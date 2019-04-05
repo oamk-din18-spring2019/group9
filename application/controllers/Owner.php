@@ -31,19 +31,23 @@ class Owner extends CI_Controller{
         "owner_fname"=>$this->input->post('fname'),
         "owner_lname"=>$this->input->post('lname'),
         "owner_phone"=>$this->input->post('phone'),
-        "owner_birthday"=>$this->input->post('bday'),
+        "owner_birthday"=>$this->input->post('birthday'),
         "owner_username"=>$this->input->post('username'),
         "owner_password"=>"$hashedPassword"
       );
       $result=$this->Owners_model->add_owner($insert_data);
+      $data['set_arrival']=$this->input->post('set_arrival');
+      $data['set_depart']=$this->input->post('set_depart');
+      $data['set_species']=$this->input->post('set_species');
       $page=$result ? 'animals/add_form' : 'owners/error';
       $this->load->view($page,$data);
 
     }
-    function atest(){
+    function transfer_animal_value(){
         $data['set_arrival']=$this->input->post('arrival');
         $data['set_depart']=$this->input->post('depart');
-        $this->load->view('animals/add_form',$data);
+        $data['set_species']=$this->input->post('species');
+        $this->load->view('owners/add_form',$data);
     }
 
   function show_owner()

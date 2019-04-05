@@ -9,7 +9,7 @@ class Animal extends CI_Controller{
     //Codeigniter : Write Less Do More
   }
 
-  function add_animalform(){
+  function add_animal_form(){
     $data['page']='animals/add_form';
     $this->load->view('menu/content',$data);
   }

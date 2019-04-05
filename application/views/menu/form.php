@@ -21,7 +21,7 @@
       ?>
     </div>
 
-    <form id=sourceForm action="<?php echo site_url('owner/atest');?>" method="post" class="name" style="height:100%;">
+    <form id=sourceForm action="<?php echo site_url('owner/transfer_animal_value');?>" method="post" class="name" style="height:100%;">
         <fieldset >
 
             <div class="animal"><p>PET</p></div>

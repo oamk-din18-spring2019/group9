@@ -1,5 +1,10 @@
 <h2>Add your pet's information</h2>
+<?php echo $set_species;  ?>
 <form id=targetForm class="" action="<?php echo site_url('animal/add_animal'); ?>" method="post">
+  <input type="hidden" name="set_depart" value="<?php echo $set_depart;?>">
+  <input type="hidden" name="set_arrival" value="<?php echo $set_arrival;?>">
+  <input type="hidden" name="set_species" value="<?php echo $set_species;?>">
+
   <label for="">Animal ID</label><br>
   <input type="text" name="animal_id" value=""><br>
 
@@ -9,10 +14,10 @@
 <div class="animal">
   Animal<br>
   <label for="Cat">Cat</label>
-  <input id="cat" type="radio" name="cat" value="">
+  <input id="cat" type="radio" name="cat" value="" <?php if($set_species=='Cat') echo 'checked=true'; ?>>
 
   <label for="Dog">Dog</label>
-  <input id="dog" type="radio" name="dog" value=""><br>
+  <input id="dog" type="radio" name="dog" value=""<?php if($set_species=='Dog') echo 'checked=true'; ?>><br>
 
 </div>
 
