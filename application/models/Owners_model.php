@@ -19,4 +19,10 @@ class Owners_model extends CI_Model{
         return false;
       }
     }
+
+    function getNewId(){
+      $this->db->select('max(owner_id) as id');
+      $this->db->from('owner');
+      return $this->db->get()->row('id');
+    }
   }

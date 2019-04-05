@@ -35,6 +35,30 @@ class staff extends CI_Controller{
       }
 
 
+      function add_staff_user_form(){
+        $data['page']='staff/add_staff_user_form';
+        $this->load->model('Staff_model');
+        $data['new_staff_id']=$this->Staff_model->getNewId()+1;
+        $this->load->view('menu/content',$data);
+      }
+      function add_staff_user(){
+        //print_r($this->input->post());
+        $this->load->model('Staff_model');
+        $hashedPassword=password_hash($this->input->post('staff_password'),PASSWORD_DEFAULT);
+        $insert_data=array(
+          "staff_id"=>$this->input->post('staff_id'),
+          "staff_fname"=>$this->input->post('staff_fname'),
+          "staff_lname"=>$this->input->post('staff_lname'),
+          "staff_username"=>$this->input->post('staff_username'),
+          "staff_password"=>$hashedPassword,
+          "staff_hours"=>$this->input->post('staff_hours')
+        );
+        $result=$this->Staff_model->add_staff_user($insert_data);
+        $data['page']='staff/add_staff_user_form';
+        $this->load->view('menu/content',$data);
+      }
+
+
   function show_animals()
   {
     $data['animals']=$this->animals_model->getanimals();
