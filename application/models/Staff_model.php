@@ -19,5 +19,24 @@ class Staff_model extends CI_Model{
       $this->db->from('staff');
       return $this->db->get()->result_array();
     }
+
+    function add_staff_user($insert_data){
+      $this->db->db_debug = false;
+      $this->db->insert('staff',$insert_data);
+      $test=$this->db->affected_rows();
+      if($test==1){
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    function getNewId(){
+      $this->db->select('max(staff_id) as id');
+      $this->db->from('staff');
+      return $this->db->get()->row('id');
+    }
+
   }
 ?>
