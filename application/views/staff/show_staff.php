@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -39,6 +40,9 @@
                    echo "<td>".$row[Title]."</td>";
                    echo "</tr>";
                }
+=======
+
+>>>>>>> master
 <h2> show Staff</h2>
 <table border="1">
   <thead>

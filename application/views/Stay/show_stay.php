@@ -14,7 +14,7 @@ print_r('stays')
             <th>Check-in date</th>
             <th>Check-out date</th>
             <th></th>
-
+            
 </tr>
 </thead>
 <tbody>
