@@ -20,6 +20,8 @@ class Owner extends CI_Controller{
 
 function add_owner_user_form(){
   $data['page']='owners/add_owner_user_form';
+  $this->load->model('Owners_model');
+  $data['new_id']=$this->Owners_model->getNewId()+1;
   $this->load->view('menu/content',$data);
 }
 function add_owner_user(){
