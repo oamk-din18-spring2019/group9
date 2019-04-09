@@ -44,5 +44,6 @@
   <br><br>
 
   <input type="submit" name="" value="Confirm">
+  <input type="button" name="" value="<?php echo '<a href="'.site_url('menu/form').'">Cancel</a>'; ?>"
 
 </form>

@@ -52,8 +52,9 @@ class staff extends CI_Controller{
           "staff_password"=>$hashedPassword,
           "staff_hours"=>$this->input->post('staff_hours')
         );
+        $data['new_id']=$this->input->post('staff_id');
         $result=$this->Staff_model->add_staff_user($insert_data);
-        $data['page']='staff/add_staff_user_form';
+        $data['page']='welcome_message';
         $this->load->view('menu/content',$data);
       }
 

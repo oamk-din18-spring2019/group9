@@ -78,8 +78,10 @@ function add_owner_user(){
     "owner_password"=>$hashedPassword,
     "owner_birthday"=>$this->input->post('owner_birthday')
   );
+  $data['new_id']=$this->input->post('owner_id');
+
   $result=$this->Owners_model->add_owner_user($insert_data);
-  $data['page']='owners/add_owner_user_form';
+  $data['page']='welcome_message';
   $this->load->view('menu/content',$data);
 }
 }
