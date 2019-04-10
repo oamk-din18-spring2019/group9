@@ -51,34 +51,16 @@
 
         </fieldset>
         <br>
-<<<<<<< HEAD
-<?php
-if (($_SESSION['logged_in']) == true) {
-      if ($_SESSION['owner_logged_in'] == true) {
-        echo("<button onclick=\"location.href=''\">Make new reservation</button>");
-        echo" <br>";
-        echo("<button onclick=\"location.href='login_owner/logout'\">Owner Logout</button>");
-        echo "<br>";
-
-      }
 
 
-    //
 
-      else if ($_SESSION['staff_logged_in'] == true) {
-        echo("<button onclick=\"location.href='staff/show_staff'\">view staff</button>");
-        echo" <br>";
-
-        echo("<button onclick=\"location.href='owner/show_owner'\">view owners</button>");
-        echo" <br>";
-=======
     <div class="">
       <?php
       if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
             if ($_SESSION['owner_logged_in'] == true) {
               echo '<a href="'.site_url('').'"><span class="btn">Make new reservation</btn> </a>';
               echo" <br>";
->>>>>>> master
+
 
               echo '<a href="'.site_url('login_owner/logout').'"><span class="btn">Owner Logout</btn> </a>';
               echo "<br>";
