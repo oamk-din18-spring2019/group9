@@ -9,6 +9,54 @@ class Owner extends CI_Controller{
     //Codeigniter : Write Less Do More
   }
 
+    function index(){
+    //$data['page']='owners/add_form';
+    $data['page']='owners/start';
+    $this->load->view('menu/content',$data);
+    //$this->load->view('owners/add_form');
+    }
+    function add_form(){
+    //$data['page']='owners/add_form';
+    $data['page']='owners/add_form';
+    $this->load->model('Owners_model');
+
+    $this->load->view('menu/content',$data);
+    //$this->load->view('owners/add_form');
+    }
+    function add_owner(){
+      //print_r($this->input->post());
+
+      $this->load->model('Owners_model');
+      $this->load->model('Animals_model');
+      $hashedPassword=password_hash($this->input->post('password'),PASSWORD_DEFAULT);
+      $insert_data=array(
+        "owner_id"=>$this->input->post('owner_id'),
+        "owner_fname"=>$this->input->post('fname'),
+        "owner_lname"=>$this->input->post('lname'),
+        "owner_phone"=>$this->input->post('phone'),
+        "owner_birthday"=>$this->input->post('birthday'),
+        "owner_username"=>$this->input->post('username'),
+        "owner_password"=>"$hashedPassword"
+      );
+      $data['new_owner_id']=$this->input->post('owner_id');
+      $data['new_id']=$this->Animals_model->getNewId()+1;
+      $result=$this->Owners_model->add_owner($insert_data);
+      $data['set_arrival']=$this->input->post('set_arrival');
+      $data['set_depart']=$this->input->post('set_depart');
+      $data['set_species']=$this->input->post('set_species');
+      $page=$result ? 'animals/add_form' : 'owners/error';
+      $this->load->view($page,$data);
+
+    }
+    function transfer_animal_value(){
+      $this->load->model('Owners_model');
+        $data['new_owner_id']=$this->Owners_model->getNewId()+1;
+        $data['set_arrival']=$this->input->post('arrival');
+        $data['set_depart']=$this->input->post('depart');
+        $data['set_species']=$this->input->post('species');
+        $this->load->view('owners/add_form',$data);
+    }
+
   function show_owner()
 {
   $this->load->model('Owners_model');

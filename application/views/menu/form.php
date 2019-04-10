@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>RESERVATION</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <!--<script src="<?php echo base_url('js/animalForm.js'); ?>" charset="utf-8"></script>-->
   <!--  <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css'); ?>"> -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -20,7 +22,7 @@
       ?>
     </div>
 
-    <form class="name" style="height:100%;">
+    <form id=sourceForm action="<?php echo site_url('owner/transfer_animal_value');?>" method="post" class="name" style="height:100%;">
         <fieldset >
 
             <div class="animal"><p>PET</p></div>
@@ -35,15 +37,12 @@
         <fieldset class="reservation">
            <div class="room" ><legend>Booking details</legend></div>
             <label for="date">Check-in date</label>
-            <input type="date" name="date" min="2019-01-01">
+            <input id="arrival" type="date" name="arrival" min="2019-01-01">
             <label for="date">Check-out date</label>
-            <input type="date" name="date" min="2019-01-01">
+            <input id="depart" type="date" name="depart" min="2019-01-01">
+            <br><br>
+            <input type="submit" name="" value="Book Now">
             <br>
-
-
-          <hr>
-
-
         </fieldset>
         <br>
     <div class="">
