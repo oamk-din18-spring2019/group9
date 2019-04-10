@@ -37,7 +37,7 @@ class staff extends CI_Controller{
       function add_staff_user_form(){
         $data['page']='staff/add_staff_user_form';
         $this->load->model('Staff_model');
-        $data['new_staff_id']=$this->Staff_model->getNewId()+1;
+        $data['New_staff_id']=$this->Staff_model->getNewId()+1;
         $this->load->view('menu/content',$data);
       }
       function add_staff_user(){
