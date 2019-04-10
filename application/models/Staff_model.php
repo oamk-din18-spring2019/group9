@@ -38,5 +38,19 @@ class Staff_model extends CI_Model{
       return $this->db->get()->row('id');
     }
 
+    function get_chosen($id){
+    $this->db->select('*');
+    $this->db->from('staff');
+    $this->db->where('staff_id',$id);
+    return $this->db->get()->result_array();
+  }
+
+  function edit_staff($update_data,$id){
+  $this->db->db_debug = false;
+  $this->db->where('staff_id',$id);
+  $this->db->update('staff',$update_data);
+  return $this->db->affected_rows();
+}
+
   }
 ?>

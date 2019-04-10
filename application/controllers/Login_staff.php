@@ -10,12 +10,12 @@ class Login_staff extends CI_Controller
     $data['page'] = 'login/login_form_staff';
     $this->load->view('menu/content', $data);
   }
-/*
-  function example(){
-      $data['name'] = 'viivi';
-      $this->load->view('login/login_form_staff', $data);
+
+  function staff_login(){
+    $this->load->view('login/login_form_staff');
+
   }
-*/
+
   function login(){
     $_SESSION['logged_in'] = false;
     $this->load->model('Login_model_staff');
@@ -41,7 +41,7 @@ class Login_staff extends CI_Controller
     $_SESSION['logged_in'] = false;
     $_SESSION['staff_logged_in'] = false;
     $_SESSION['staff_username'] = "";
-    $data['page'] = 'login/logout_page_staff';
+    $data['page'] = 'welcome_message';
     $this->load->view('menu/content', $data);
   }
 

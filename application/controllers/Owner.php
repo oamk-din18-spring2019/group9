@@ -62,7 +62,7 @@ class Owner extends CI_Controller{
   $this->load->model('Owners_model');
   $data['owner']=$this->Owners_model->get_owner_users();
   $data['page']='owners/show_owner';
-  $this->load->view('menu/content',$data);
+  $this->load->view('staff/staff_content',$data);
 
 }
 
@@ -86,9 +86,15 @@ function add_owner_user(){
     "owner_birthday"=>$this->input->post('owner_birthday')
   );
   $data['new_id']=$this->input->post('owner_id');
-
   $result=$this->Owners_model->add_owner_user($insert_data);
   $data['page']='welcome_message';
   $this->load->view('menu/content',$data);
 }
+
+function owner_logged_in(){
+  $data['page']='welcome_message';
+  $this->load->view('owners/owner_content',$data);
+
+}
+
 }
