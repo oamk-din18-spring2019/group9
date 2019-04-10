@@ -3,7 +3,6 @@
 
 <p>
 <form class="" action="<?php  echo site_url('owner/add_owner_user'); ?>" method="post">
-<label for="">ID</label> <br>
 <input type="hidden" name="owner_id" value="<?php echo $new_id; ?>"> <br>
 <label for="">Firstname</label><br>
 <input type="text" name="owner_fname" value=""><br>
