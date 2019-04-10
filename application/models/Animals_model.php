@@ -17,4 +17,10 @@ class Animals_model extends CI_Controller{
 
   }
 
+  function getNewId(){
+    $this->db->select('max(animal_id) as id');
+    $this->db->from('animal');
+    return $this->db->get()->row('id');
+  }
+
 }

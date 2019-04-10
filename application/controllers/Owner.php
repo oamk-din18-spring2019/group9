@@ -18,6 +18,8 @@ class Owner extends CI_Controller{
     function add_form(){
     //$data['page']='owners/add_form';
     $data['page']='owners/add_form';
+    $this->load->model('Owners_model');
+
     $this->load->view('menu/content',$data);
     //$this->load->view('owners/add_form');
     }
@@ -25,6 +27,7 @@ class Owner extends CI_Controller{
       //print_r($this->input->post());
 
       $this->load->model('Owners_model');
+      $this->load->model('Animals_model');
       $hashedPassword=password_hash($this->input->post('password'),PASSWORD_DEFAULT);
       $insert_data=array(
         "owner_id"=>$this->input->post('owner_id'),
@@ -35,6 +38,8 @@ class Owner extends CI_Controller{
         "owner_username"=>$this->input->post('username'),
         "owner_password"=>"$hashedPassword"
       );
+      $data['new_owner_id']=$this->input->post('owner_id');
+      $data['new_id']=$this->Animals_model->getNewId()+1;
       $result=$this->Owners_model->add_owner($insert_data);
       $data['set_arrival']=$this->input->post('set_arrival');
       $data['set_depart']=$this->input->post('set_depart');
@@ -44,6 +49,8 @@ class Owner extends CI_Controller{
 
     }
     function transfer_animal_value(){
+      $this->load->model('Owners_model');
+        $data['new_owner_id']=$this->Owners_model->getNewId()+1;
         $data['set_arrival']=$this->input->post('arrival');
         $data['set_depart']=$this->input->post('depart');
         $data['set_species']=$this->input->post('species');

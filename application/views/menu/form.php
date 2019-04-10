@@ -40,17 +40,9 @@
             <input id="arrival" type="date" name="arrival" min="2019-01-01">
             <label for="date">Check-out date</label>
             <input id="depart" type="date" name="depart" min="2019-01-01">
+            <br><br>
+            <input type="submit" name="" value="Book Now">
             <br>
-        <div class="">
-          <?php     echo '<a href="'.site_url('').'"><span class="btn">Search</btn> </a>';
-                    echo" <br>";
-
-                    echo '<a href="'.site_url('owner/add_form').'"><span class="btn">Book now</btn> </a>';
-                    echo" <br>";
-          ?>
-          <hr>
-        </div>
-
         </fieldset>
         <br>
     <div class="">

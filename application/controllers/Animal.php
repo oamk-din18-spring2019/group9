@@ -11,6 +11,8 @@ class Animal extends CI_Controller{
 
   function add_animal_form(){
     $data['page']='animals/add_form';
+    $this->load->model('Animals_model');
+    $data['new_id']=$this->Animals_model->getNewId()+1;
     $this->load->view('menu/content',$data);
   }
 
@@ -20,12 +22,12 @@ class Animal extends CI_Controller{
       "animal_id"=>$this->input->post('animal_id'),
       "animal_name"=>$this->input->post('animal_name'),
       "animal_species"=>$this->input->post('animal_species'),
-      "animal_description"=>$this->input->post('description'),
-      "animal_food"=>$this->input->post('food'),
-      "animal_medical"=>$this->input->post('medical'),
-      "animal_instruction"=>$this->input->post('instruction'),
-      "animal_arrival"=>$this->input->post('arrival'),
-      "animal_depart"=>$this->input->post('depart')
+      "animal_description"=>$this->input->post('animal_description'),
+      "animal_food"=>$this->input->post('animal_food'),
+      "animal_medical"=>$this->input->post('animal_medical'),
+      "animal_instruction"=>$this->input->post('animal_instruction'),
+      "animal_arrival"=>$this->input->post('animal_arrival'),
+      "animal_depart"=>$this->input->post('animal_depart')
     );
     $result=$this->Animals_model->add_animal($insert_data);
     $page=$result ? 'animals/confirmation' : 'animals/error';
