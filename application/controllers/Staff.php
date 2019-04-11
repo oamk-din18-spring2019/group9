@@ -6,20 +6,21 @@ class staff extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('Staff_model');
+
   }
 
 
       function add_form(){
-        $data['page']='Staff/add_form';// WARNING:
+        $data['page']='Staff/add_form';
         $this->load->view('Staff/Add_form',$data);
       }
 
   function show_staff()
   {
-      $this->load->model('Staff_model');
       $data['staff']=$this->Staff_model->get_staff_users();
       $data['page']='staff/show_staff';
-      $this->load->view('staff/show_staff',$data);
+      $this->load->view('staff/staff_content',$data);
 
 
 
@@ -34,6 +35,8 @@ class staff extends CI_Controller{
       }
 
 
+
+
       function add_staff_user_form(){
         $data['page']='staff/add_staff_user_form';
         $this->load->model('Staff_model');
@@ -42,7 +45,6 @@ class staff extends CI_Controller{
       }
       function add_staff_user(){
         //print_r($this->input->post());
-        $this->load->model('Staff_model');
         $hashedPassword=password_hash($this->input->post('staff_password'),PASSWORD_DEFAULT);
         $insert_data=array(
           "staff_id"=>$this->input->post('staff_id'),
@@ -52,8 +54,9 @@ class staff extends CI_Controller{
           "staff_password"=>$hashedPassword,
           "staff_hours"=>$this->input->post('staff_hours')
         );
+        $data['new_id']=$this->input->post('staff_id');
         $result=$this->Staff_model->add_staff_user($insert_data);
-        $data['page']='staff/add_staff_user_form';
+        $data['page']='welcome_message';
         $this->load->view('menu/content',$data);
       }
 
@@ -74,6 +77,65 @@ class staff extends CI_Controller{
 
   }
 
+  function staff_logged_in(){
+    $data['page']='welcome_message';
+    $this->load->view('staff/staff_content',$data);
+
+  }
+
+  function show_edit($id){
+  $data['staff']=$this->Staff_model->get_chosen($id);
+  $data['current_id']=$id;
+  $data['page']='staff/edit_form';
+  $this->load->view('staff/staff_content',$data);
+}
+
+function edit_staff(){
+  //print_r($this->input->post());
+  $id=$this->input->post('id');
+  $update_data=array(
+    "staff_fname" => $this->input->post('fn'),
+    "staff_lname" => $this->input->post('ln'),
+    "staff_hours" => $this->input->post('hr')
+  );
+  $result=$this->Staff_model->edit_staff($update_data,$id);
+  if ($result==1) {
+    //$data['message']="You have edited the student";
+    redirect('staff/show_staff');
+  }
+  else {
+    $data['page']='welcome_message';
+    $this->load->view('staff/show_staff');
+  }
+}
+function delete_staff($data)
+{
+
+$servername = "localhost";
+$username = "hoteluser";
+$password = "hotelpass";
+$dbname = "hotel";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// sql to delete a record
+$sql = "DELETE FROM Staff WHERE staff_id='1'";
+
+if ($conn->query($sql) === TRUE) {
+    echo "staff deleted successfully";
+} else {
+    echo "Error deleting staff: " . $conn->error;
+}
+
+$conn->close();
+
+
+}
 }
 
   ?>
