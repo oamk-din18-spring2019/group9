@@ -6,8 +6,8 @@ class Animal extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-      $this->load->model('Animals_model');
       $this->load->model('Stay_model');
+      $this->load->model('Animals_model');
   }
 
   function add_animal_form(){
@@ -35,7 +35,6 @@ class Animal extends CI_Controller{
       "check_in"=>$this->input->post('animal_arrival'),
       "check_out"=>$this->input->post('animal_depart')
     );
-    $this->load->model('Stay_model');
     $result2=$this->Stay_model->add_stay($insert_stays);
     $page=$result1 ? 'animals/confirmation' : 'animals/error';
     $this->load->view($page);
