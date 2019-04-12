@@ -6,7 +6,15 @@ class Animal extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    //Codeigniter : Write Less Do More
+    $this->load->model('Animals_model');
+
+  }
+
+  function show_animals()
+  {
+      $data['animal']=$this->Animals_model->get_animals();
+      $data['page']='animals/show_animals';
+      $this->load->view('staff/staff_content',$data);
   }
 
   function add_animal_form(){

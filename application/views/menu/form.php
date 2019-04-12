@@ -5,21 +5,20 @@
     <title>RESERVATION</title>
     <link rel="stylesheet" type="text/css" href="form.css">
     <!--<script src="<?php echo base_url('js/animalForm.js'); ?>" charset="utf-8"></script>-->
-  <!--  <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css'); ?>"> -->
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css'); ?>">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-
+<!--
+<div class="container">
+  <img src="<?php echo base_url('pictures/sc-Ultra-suite-w-Dogs.jpg');?>" >
+  <div class="topright">Owner login</div>
+</div>
+-->
     <div class="main">
-      <h1>pet rest</h1>
-      <?php
-      if(!empty($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
-        //do nothing
-      }
-      else {
-        echo "Guest";
-      }
-      ?>
+    <?php echo '<a href="'.site_url('welcome/index').'">pet rest</a>'?>
+
     </div>
 
     <form id=sourceForm action="<?php echo site_url('owner/transfer_animal_value');?>" method="post" class="name" style="height:100%;">
@@ -45,7 +44,7 @@
             <br>
         </fieldset>
         <br>
-    <div class="">
+    <div class="btn-group">
       <?php
       if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
             if ($_SESSION['owner_logged_in'] == true) {
@@ -84,7 +83,6 @@
       }
 
       else {
-
 
       /*  echo '<a href="'.site_url('owner/add_owner_user_form').'"><span class="btn">Create a new account</btn> </a>';
         echo" <br>";
