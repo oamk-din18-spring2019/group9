@@ -28,13 +28,13 @@ function add_stay(){
     "Check_in"=>$this->input()->post('Check_in'),
     "Check_out"=>$this->input()->post('Check_out'),
   );
-   $result=$this->Stay_model->add_stay($insert_data);
+   /*$result=$this->Stay_model->add_stay($insert_data);
   if ($result==1) {
     $data['message']="You have added a new customer";
   }
   else {
     $data['message']="Something went wrong!";
-  }
+  }*/
   $data['page']='Stay/add_info';
   $this->load->view('Stay/show_stay',$data);
 }
