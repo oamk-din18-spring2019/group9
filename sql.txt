@@ -64,5 +64,3 @@ drop column animal_arrival;
 
 ALTER TABLE animal
 drop column animal_depart;
-
-DELETE FROM owner WHERE owner_id>10;
