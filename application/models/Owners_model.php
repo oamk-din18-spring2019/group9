@@ -37,4 +37,18 @@ class Owners_model extends CI_Model{
       $this->db->from('owner');
       return $this->db->get()->row('id');
   }
+  function get_chosen($id){
+  $this->db->select('*');
+  $this->db->from('owner');
+  $this->db->where('owner_id',$id);
+  return $this->db->get()->result_array();
 }
+
+  function edit_owner($update_data,$id){
+  $this->db->db_debug = false;
+  $this->db->where('owner_id',$id);
+  $this->db->update('owner',$update_data);
+  return $this->db->affected_rows();
+}
+}
+?>

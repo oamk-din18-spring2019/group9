@@ -57,3 +57,9 @@ add check_in VARCHAR(255);
 
 ALTER TABLE stays
 add check_out VARCHAR(255);
+
+ALTER TABLE animal
+drop column animal_arrival;
+
+ALTER TABLE animal
+drop column animal_depart;
