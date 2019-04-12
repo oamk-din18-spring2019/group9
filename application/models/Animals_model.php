@@ -28,4 +28,10 @@ class Animals_model extends CI_Controller{
     return $this->db->affected_rows();
   }
 
+  function get_animals(){
+      $this->db->select('*');
+      $this->db->from('animal');
+      return $this->db->get()->result_array();
+    }
+
 }
