@@ -1,5 +1,5 @@
 <h2>Owner</h2>
-<table border="1">
+<table border="1" class="table table-hover">
   <thead>
     <tr><th>ID</th><th>Firstname</th><th>Lastname</th><th>Phone number</th><th>Date of birth</th></tr>
   </thead>

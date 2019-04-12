@@ -39,5 +39,32 @@ class Animal extends CI_Controller{
     $page=$result1 ? 'animals/confirmation' : 'animals/error';
     $this->load->view($page);
   }
+  function edit_animal(){
+    $this->load->model('Animals_model');
+    $id=$this->input->post('id');
+    $update_data=array(
+      "animal_species"=>$this->input->post('animal_species'),
+      "animal_description"=>$this->input->post('animal_description'),
+      "animal_food"=>$this->input->post('animal_food'),
+      "animal_medical"=>$this->input->post('animal_medical'),
+      "animal_instruction"=>$this->input->post('animal_instruction')
+    );
+    $result=$this->Animals_model->edit_animal($update_data,$id);
+    if ($result==1) {
+      redirect('animals/show_animal');
+    }
+    else {
+      $data['page']='welcome_message';
+      $this->load->view('animals/show_animal');
+    }
+  }
+  function show_edit($id){
+    $this->load->model('Animals_model');
+  $data['animal']=$this->Animals_model->get_chosen($id);
+  $data['current_id']=$id;
+  $data['page']='animals/edit_form';
+  $this->load->view('animals/animal_content',$data);
+  }
+
 
 }

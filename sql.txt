@@ -59,6 +59,10 @@ add check_in VARCHAR(255);
 ALTER TABLE stays
 add check_out VARCHAR(255);
 
+
+11.4
+
+
 ALTER TABLE animal
 drop column animal_arrival;
 
