@@ -97,7 +97,6 @@ function owner_logged_in(){
 
 }
 function edit_owner(){
-  $this->load->model('Owners_model');
   $id=$this->input->post('id');
   $update_data=array(
     "owner_fname" => $this->input->post('owner_fname'),
@@ -107,7 +106,7 @@ function edit_owner(){
   );
   $result=$this->Owners_model->edit_owner($update_data,$id);
   if ($result==1) {
-    redirect('owners/show_owner');
+    redirect('owner/show_owner');
   }
   else {
     $data['page']='welcome_message';
@@ -115,7 +114,6 @@ function edit_owner(){
   }
 }
 function show_edit($id){
-  $this->load->model('Owners_model');
 $data['owner']=$this->Owners_model->get_chosen($id);
 $data['current_id']=$id;
 $data['page']='owners/edit_form';

@@ -10,6 +10,11 @@ class Animal extends CI_Controller{
       $this->load->model('Animals_model');
   }
 
+function show_animals(){
+  $data['animal']=$this->Animals_model->get_animals();
+  $data['page']='animals/show_animals';
+  $this->load->view('staff/staff_content',$data);
+}
   function add_animal_form(){
     $data['page']='animals/add_form';
     $this->load->model('Animals_model');
@@ -51,11 +56,11 @@ class Animal extends CI_Controller{
     );
     $result=$this->Animals_model->edit_animal($update_data,$id);
     if ($result==1) {
-      redirect('animals/show_animal');
+      redirect('animal/show_animals');
     }
     else {
-      $data['page']='welcome_message';
-      $this->load->view('animals/show_animal');
+      $data['page']='animals/edit_error';
+      $this->load->view('staff/staff_content',$data);
     }
   }
   function show_edit($id){
