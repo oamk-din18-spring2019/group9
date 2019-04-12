@@ -9,22 +9,15 @@
 <body>
 <h1>pet rest</h1>
 <h2>Staff account</h2>
-<?php
-echo '<a href="'.site_url('staff/show_staff').'"><span class="btn">view staff</btn> </a>';
-echo "<br>";
+<div class="btn-group">
+<?php echo '<a href="'.site_url('staff/show_staff').'"><span class="btn">view staff</btn> </a>';
 
 echo '<a href="'.site_url('owner/show_owner').'"><span class="btn">view owners</btn> </a>';
-echo "<br>";
 
-echo '<a href="'.site_url('').'"><span class="btn">view animals</btn> </a>';
-echo "<br>";
+echo '<a href="'.site_url('animal/show_animals').'"><span class="btn">view animals</btn> </a>';
 
 echo '<a href="'.site_url('stay/show_stay').'"><span class="btn">view stays</btn> </a>';
-echo "<br>";
 
 echo '<a href="'.site_url('login_staff/logout').'"><span class="btn">Staff Logout</btn> </a>';
-echo "<br>";
-
-
-
  ?>
+ </div>

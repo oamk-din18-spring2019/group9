@@ -3,7 +3,9 @@
 //print_r('stays')
 
 ?>
-<center><table border="none" >
+
+<center><table class="table table-hover" border="1"" >
+
     <thead>
         <tr>
             <th>Owner ID</th>
@@ -28,8 +30,8 @@
         echo '<td>'.$row['Check_in'].'</td>';
         echo '<td>'.$row['Check_out'].'</td>';
         echo '</tr>';
-    } 
-    ?> 
+    }
+    ?>
 </tbody>
 </table>
 </center>
