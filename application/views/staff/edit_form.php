@@ -1,5 +1,5 @@
 <h2>Edit</h2>
-<?php print_r($staff); ?>
+
 
 <form class="" action="<?php  echo site_url('staff/edit_staff'); ?>" method="post">
 <label for="">ID</label> <br>
