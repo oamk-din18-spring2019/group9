@@ -12,7 +12,7 @@
       <input type="hidden" name="animal_depart" value="<?php echo $set_depart;?>">
       <input type="hidden" name="animal_arrival" value="<?php echo $set_arrival;?>">
       <input type="hidden" name="animal_species" value="<?php echo $set_species;?>">
-
+      <input type="hidden" name="owner_id" value="<?php echo $new_owner_id;?>">
       <input type="hidden" name="animal_id" value="<?php echo $new_id; ?>"><br>
 
       <label for="animal_name">Name</label><br>
