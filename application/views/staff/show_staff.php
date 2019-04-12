@@ -13,10 +13,11 @@
        echo '<td>'.$row['staff_fname'].'</td>';
        echo '<td>'.$row['staff_lname'].'</td>';
        echo '<td>'.$row['staff_hours'].'</td>';
-       
+
        echo '<td><a href="'.site_url('staff/show_edit/').$row['staff_id'].'"><span class="btn">EDIT</btn></a></td>';
        echo '<td><a href="'.site_url('staff/show_delete/').$row['staff_id'].'"><button>DELETE</button></a></td>';
        echo '</tr>';
+
 
     }
     ?>

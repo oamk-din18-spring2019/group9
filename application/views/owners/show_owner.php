@@ -13,7 +13,7 @@
        echo '<td>'.$row['owner_lname'].'</td>';
        echo '<td>'.$row['owner_phone'].'</td>';
        echo '<td>'.$row['owner_birthday'].'</td>';
-       echo '<td><a href="'.site_url('owner/show_edit/').$row['owner_id'].'">EDIT</a></td>';
+       echo '<td><a href="'.site_url('owner/show_edit/').$row['owner_id'].'"><button>EDIT</button></a></td>';
       echo '</tr>';
     }
     ?>
