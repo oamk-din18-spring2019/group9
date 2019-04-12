@@ -1,26 +1,31 @@
-<h2>Students</h2>
+<center><h2>Stays</h2></center>
 <?php
-print_r('stays')
+//print_r('stays')
+
 ?>
-<table class="table table-hover" border="1">
+
+<center><table class="table table-hover" border="1"" >
+
     <thead>
         <tr>
             <th>Owner ID</th>
             <th>Animal ID </th>
-            <th>Payment</th>
+            <th>Room ID </th>
+            <th>Cost</th>
             <th>Check-in date</th>
             <th>Check-out date</th>
             <th></th>
-
+            
 </tr>
 </thead>
 <tbody>
     <?php
-    foreach($stays as $row)
+    foreach($Stay as $row)
     {
         echo '<tr>';
         echo '<td>'.$row['owner_id'].'</td>';
         echo '<td>'.$row['animal_id'].'</td>';
+        echo '<td>'.$row['room_id'].'</td>';
         echo '<td>'.$row['stay_price'].'</td>';
         echo '<td>'.$row['Check_in'].'</td>';
         echo '<td>'.$row['Check_out'].'</td>';
@@ -29,3 +34,4 @@ print_r('stays')
     ?>
 </tbody>
 </table>
+</center>
