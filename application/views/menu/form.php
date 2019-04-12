@@ -36,9 +36,10 @@
         <fieldset class="reservation">
            <div class="room" ><legend>Booking details</legend></div>
             <label for="date">Check-in date</label>
-            <input id="arrival" type="date" name="arrival" min="2019-01-01">
+            
+            <input id="arrival" type="date" name="arrival" min="<?php echo date("Y-m-d");?>" >
             <label for="date">Check-out date</label>
-            <input id="depart" type="date" name="depart" min="2019-01-01">
+            <input id="depart" type="date" name="depart" min="<?php echo date("Y-m-d");?>" >
             <br><br>
             <input type="submit" name="" value="Book Now">
             <br>
