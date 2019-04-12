@@ -34,6 +34,7 @@ staff_hours VARCHAR(255)) Engine=InnoDB;
 CREATE TABLE stays(
 owner_id SMALLINT PRIMARY KEY,
 animal_id SMALLINT,
+room_id SMALLINT ,
 stay_price VARCHAR(255),
 FOREIGN KEY(owner_id) REFERENCES owner(owner_id)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
@@ -57,3 +58,9 @@ add check_in VARCHAR(255);
 
 ALTER TABLE stays
 add check_out VARCHAR(255);
+
+ALTER TABLE animal
+drop column animal_arrival;
+
+ALTER TABLE animal
+drop column animal_depart;

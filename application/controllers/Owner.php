@@ -6,6 +6,7 @@ class Owner extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
+  $this->load->model('Owners_model');
     //Codeigniter : Write Less Do More
   }
 
@@ -59,7 +60,6 @@ class Owner extends CI_Controller{
 
   function show_owner()
 {
-  $this->load->model('Owners_model');
   $data['owner']=$this->Owners_model->get_owner_users();
   $data['page']='owners/show_owner';
   $this->load->view('staff/staff_content',$data);
@@ -96,5 +96,31 @@ function owner_logged_in(){
   $this->load->view('owners/owner_content',$data);
 
 }
+function edit_owner(){
+  $this->load->model('Owners_model');
+  $id=$this->input->post('id');
+  $update_data=array(
+    "owner_fname" => $this->input->post('owner_fname'),
+    "owner_lname" => $this->input->post('owner_lname'),
+    "owner_phone" => $this->input->post('owner_phone'),
+    "owner_birthday" => $this->input->post('owner_birthday')
+  );
+  $result=$this->Owners_model->edit_owner($update_data,$id);
+  if ($result==1) {
+    redirect('owners/show_owner');
+  }
+  else {
+    $data['page']='welcome_message';
+    $this->load->view('owners/show_owner');
+  }
+}
+function show_edit($id){
+  $this->load->model('Owners_model');
+$data['owner']=$this->Owners_model->get_chosen($id);
+$data['current_id']=$id;
+$data['page']='owners/edit_form';
+$this->load->view('owners/owner_content',$data);
+}
 
 }
+?>

@@ -45,6 +45,9 @@
             <br>
         </fieldset>
         <br>
+
+
+
     <div class="">
       <?php
       if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
@@ -53,6 +56,7 @@
 /*
               echo '<a href="'.site_url('animals/add_form').'"><span class="btn">Make new reservation</btn> </a>';
               echo" <br>";
+
 
               echo '<a href="'.site_url('login_owner/logout').'"><span class="btn">Owner Logout</btn> </a>';
               echo "<br>";

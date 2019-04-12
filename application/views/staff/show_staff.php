@@ -14,8 +14,10 @@
        echo '<td>'.$row['staff_lname'].'</td>';
        echo '<td>'.$row['staff_hours'].'</td>';
        echo '<td><a href="'.site_url('staff/show_edit/').$row['staff_id'].'">EDIT</a></td>';
-       echo '<td><a href="'.site_url('staff/delete_staff/').$row['staff_id'].'"><button>Delete</button></a></td>';
-      echo '</tr>';
+
+       echo '<td><a href="'.site_url('staff/show_delete/').$row['staff_id'].'"><button>DELETE</button></a></td>';
+       echo '</tr>';
+
     }
     ?>
   </tbody>

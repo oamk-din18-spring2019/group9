@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class staff extends CI_Controller{
+class Staff extends CI_Controller{
 
   public function __construct()
   {
@@ -28,7 +28,7 @@ class staff extends CI_Controller{
 
       function show_owners()
       {
-        $data['Owners']=$this->Owners_model->get_owner_users();
+        $data['owner']=$this->Owners_model->get_owner_users();
         $data['page']='owners/show_owners';
         $this->load->view('owners/show_owner',$data);
 
@@ -108,34 +108,24 @@ function edit_staff(){
     $this->load->view('staff/show_staff');
   }
 }
-function delete_staff($data)
-{
 
-$servername = "localhost";
-$username = "hoteluser";
-$password = "hotelpass";
-$dbname = "hotel";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+  function delete_staff($id){
+      $this->Staff_model->delete_staff($id);
+      redirect('staff/show_staff');
+    }
 
-// sql to delete a record
-$sql = "DELETE FROM Staff WHERE staff_id='1'";
-
-if ($conn->query($sql) === TRUE) {
-    echo "staff deleted successfully";
-} else {
-    echo "Error deleting staff: " . $conn->error;
-}
-
-$conn->close();
+  function show_delete($id){
+        $data['chosen_staff']=$this->Staff_model->get_chosen($id);
+        $data['page']='staff/delete_staff';
+        $this->load->view('menu/content',$data);
+      }
 
 
 }
-}
+
+
+
+
 
   ?>
