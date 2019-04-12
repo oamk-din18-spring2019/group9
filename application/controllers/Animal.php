@@ -6,7 +6,8 @@ class Animal extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    //Codeigniter : Write Less Do More
+      $this->load->model('Stay_model');
+      $this->load->model('Animals_model');
   }
 
   function add_animal_form(){
@@ -17,20 +18,25 @@ class Animal extends CI_Controller{
   }
 
   function add_animal(){
-    $this->load->model('Animals_model');
-    $insert_data=array(
+    //$this->load->model('Animals_model');
+    $insert_animal=array(
       "animal_id"=>$this->input->post('animal_id'),
       "animal_name"=>$this->input->post('animal_name'),
       "animal_species"=>$this->input->post('animal_species'),
       "animal_description"=>$this->input->post('animal_description'),
       "animal_food"=>$this->input->post('animal_food'),
       "animal_medical"=>$this->input->post('animal_medical'),
-      "animal_instruction"=>$this->input->post('animal_instruction'),
-      "animal_arrival"=>$this->input->post('animal_arrival'),
-      "animal_depart"=>$this->input->post('animal_depart')
+      "animal_instruction"=>$this->input->post('animal_instruction')
     );
-    $result=$this->Animals_model->add_animal($insert_data);
-    $page=$result ? 'animals/confirmation' : 'animals/error';
+    $result1=$this->Animals_model->add_animal($insert_animal);
+    $insert_stays=array(
+      "animal_id"=>$this->input->post('animal_id'),
+      "owner_id"=>$this->input->post('owner_id'),
+      "check_in"=>$this->input->post('animal_arrival'),
+      "check_out"=>$this->input->post('animal_depart')
+    );
+    $result2=$this->Stay_model->add_stay($insert_stays);
+    $page=$result1 ? 'animals/confirmation' : 'animals/error';
     $this->load->view($page);
   }
 

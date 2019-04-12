@@ -22,5 +22,10 @@ class Animals_model extends CI_Controller{
     $this->db->from('animal');
     return $this->db->get()->row('id');
   }
+  public function add_stay($insert_data)
+  {
+    $this->db->insert('stays',$insert_data);
+    return $this->db->affected_rows();
+  }
 
 }
