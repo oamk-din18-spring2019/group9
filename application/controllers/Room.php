@@ -15,8 +15,16 @@ class Room extends CI_Controller{
     $this->load->view('menu/content', $data);
   }
 
-  function calculate_price() {
+  function show_stay_dates() {
+    $this->load->model('Room_model');
+    $data['room']=$this->Room_model->show_stay_duration();
+    $data['page']='room/show_room';
+    $this->load->view('staff/staff_content',$data);
 
   }
+
+  /*function calculate_price() {
+
+  }*/
 
 }
