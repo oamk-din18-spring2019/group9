@@ -17,4 +17,12 @@ class Login_model_owner extends CI_Model{
     $this->db->where('owner_username', $givenOwnerUser);
     return $this->db->get()->row('owner_password');
   }
+
+  function getOwnerID($givenOwnerUser){
+    $this->db->select('owner_id');
+    $this->db->from('owner');
+    $this->db->where('owner_username', $givenOwnerUser);
+    return $this->db->get()->row('owner_id');
+
+  }
 }

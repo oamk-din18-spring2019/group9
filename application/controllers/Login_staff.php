@@ -7,7 +7,7 @@ class Login_staff extends CI_Controller
 
 
   function menu(){
-    $data['page'] = 'login/login_form_staff';
+    $data['page'] = 'welcome_message';
     $this->load->view('menu/content', $data);
   }
 
@@ -28,7 +28,7 @@ class Login_staff extends CI_Controller
       $_SESSION['staff_logged_in'] = true;
       $_SESSION['staff_username'] = $givenStaffUser;
       $data['page'] = 'login/personal_page_staff';
-      $this->load->view('menu/content', $data);
+      $this->load->view('staff/staff_content', $data);
     }
     else {
       $_SESSION['staff_logged_in'] = false;

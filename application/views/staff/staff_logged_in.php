@@ -20,4 +20,5 @@ echo '<a href="'.site_url('stay/show_stay').'"><span class="btn">view stays</btn
 
 echo '<a href="'.site_url('login_staff/logout').'"><span class="btn">Staff Logout</btn> </a>';
  ?>
+ <hr>
  </div>

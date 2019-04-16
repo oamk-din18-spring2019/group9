@@ -9,29 +9,29 @@
     <h2>Add your pet's information</h2>
     <?php echo $set_species;  ?>
     <form id=targetForm class="" action="<?php echo site_url('animal/add_animal'); ?>" method="post">
-      <input type="hidden" name="animal_depart" value="<?php echo $set_depart;?>">
-      <input type="hidden" name="animal_arrival" value="<?php echo $set_arrival;?>">
+      <input type="hidden" name="check_out" value="<?php echo $set_depart;?>">
+      <input type="hidden" name="check_in" value="<?php echo $set_arrival;?>">
       <input type="hidden" name="animal_species" value="<?php echo $set_species;?>">
       <input type="hidden" name="owner_id" value="<?php echo $new_owner_id;?>">
       <input type="hidden" name="animal_id" value="<?php echo $new_id; ?>"><br>
 
       <label for="animal_name">Name</label><br>
-      <input type="text" name="animal_name" value=""><br>
+      <input type="text" name="animal_name" value="" required><br>
 
 
 
-      <label for="animal_arrival">Arrival date</label><br>
-      <input type="date" id="selected_arrival" name="animal_arrival" value="<?php echo $set_arrival; ?>"><br>
+      <label for="check_in">Arrival date</label><br>
+      <input type="date" id="selected_arrival" name="check_in" value="<?php echo $set_arrival; ?>"><br>
 
-      <label for="animal_depart">Departure date</label><br>
-      <input type="date" id="selected_departure" name="animal_depart" value="<?php echo $set_depart; ?>"><br>
+      <label for="check_out">Departure date</label><br>
+      <input type="date" id="selected_departure" name="check_out" value="<?php echo $set_depart; ?>"><br>
 
       <label for="animal_description">Pet description</label><br>
-      <textarea id="animal_description" name="animal_description"></textarea>
+      <textarea id="animal_description" name="animal_description" required></textarea>
       <br>
 
       <label for="animal_food">Feeding instructions</label><br>
-      <textarea id="animal_food" name="animal_food"></textarea>
+      <textarea id="animal_food" name="animal_food" required></textarea>
       <br>
 
       <label for="animal_medical">If your pet has medication, describe them here</label><br>

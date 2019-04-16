@@ -2,7 +2,7 @@
 <h2> show Staff</h2>
 <table border="1" class="table table-hover">
   <thead>
-    <tr><th>ID</th><th>Firstname</th><th>Lastname</th><th>Work hours</th><th>Edit</th><th>Delete</th></tr>
+    <tr><th>ID</th><th>Firstname</th><th>Lastname</th><th>Work hours</th><th>Edit</th></tr>
   </thead>
   <tbody>
 

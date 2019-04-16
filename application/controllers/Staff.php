@@ -26,14 +26,6 @@ class staff extends CI_Controller{
 
   }
 
-      function show_owners()
-      {
-        $this->load->model('Staff_model');
-        $data['staff']=$this->Staff_model->get_staff_users();
-        $data['page']='staff/show_staff';
-        $this->load->view('menu/form',$data);
-
-      }
 
 
       function add_staff_user_form(){
