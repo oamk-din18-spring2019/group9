@@ -23,8 +23,14 @@ class Room extends CI_Controller{
 
   }
 
-  /*function calculate_price() {
+    function calculate_price() {
+    if ($room_id < '10') {
+      echo 40 * $duration;
+    }
+    else ($room_id > '10' && $room_id < '20') {
+      echo 50 * $duration;
+    }
 
-  }*/
+  }
 
 }

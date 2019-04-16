@@ -108,6 +108,18 @@ function edit_staff(){
   }
 }
 
+  function show_room_info() {
+    $this->load->model('Room_model');
+    $insert_data=array(
+      "room_id"=>$this->input->post('room_id'),
+      "stay_duration"=>$this->input->post('stay_duration'),
+      "stay_price"=>$this->input->post('stay_price')
+    );
+    $data['duration']=$this->Room_model->stay_duration();
+    //$data['cost']=$this->Room_model->stay_cost();
+    $this->load->view('room/show_room',$data);
+  }
+
 }
 
   ?>
