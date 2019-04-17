@@ -20,6 +20,6 @@ echo '<a href="'.site_url('stay/show_stay').'"><span class="btn">view stays</btn
 
 echo '<a href="'.site_url('login_staff/logout').'"><span class="btn">Staff Logout</btn> </a>';
 
-echo '<a href="'.site_url('staff/show_room_info').'"><span class="btn">room</btn> </a>';
+echo '<a href="'.site_url('room/show_room').'"><span class="btn">room</btn> </a>';
  ?>
  </div>

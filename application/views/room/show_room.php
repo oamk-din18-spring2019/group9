@@ -5,22 +5,29 @@
     <title></title>
   </head>
   <body>
-    Room table
-    <form class="" action="<?php echo site_url('room/show_stay_dates'); ?>" method="post">
+    <h1>Room table</h1>
+    <table border="1" class="table table-hover">
+      <thead>
+        <tr><th>OWNER ID</th><th>ANIMAL ID</th><th>ROOM ID</th><th>PRICE</th><th>CHECK in</th><th>CHECK out</th><th>duration</th></tr>
+      </thead>
+      <tbody>
 
-    <label for="">Room id</label><br>
-    <input type="text" name="room_id" value=""><br>
+        <?php
+        foreach ($room as $row) {
+          echo '<tr>';
+           echo '<td>'.$row['owner_id'].'</td>';
+           echo '<td>'.$row['animal_id'].'</td>';
+           echo '<td>'.$row['room_id'].'</td>';
+           echo '<td>'.$row['stay_price'].'</td>';
+           echo '<td>'.$row['check_in'].'</td>';
+           echo '<td>'.$row['check_out'].'</td>';
 
-    <label for="">Stay duration</label><br>
-    <input type="text" name="stay_duration" value="<?php echo $duration; ?>"><br>
 
-    <label for="">Price</label><br>
-    <input type="text" name="stay_cost" value="<?php echo $cost; ?>"><br>
-    <br><br>
-
-    <input type="submit" name="" value="Submit">
-
-    </form>
+          echo '</tr>';
+        }
+        ?>
+      </tbody>
+    </table>
 
   </body>
 </html>
