@@ -2,7 +2,7 @@
 
 <?php
 
-echo '<a href="'.site_url('login_staff/staff_login').'"><span class="btn">Staff Login</btn> </a>';
+echo '<a href="'.site_url('login_staff/staff_login').'">Staff Login</a>';
 echo" <br>";
 
  ?>

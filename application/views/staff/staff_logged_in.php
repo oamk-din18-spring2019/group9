@@ -8,17 +8,20 @@
 </head>
 <body>
 <h1>pet rest</h1>
+<hr>
 <h2>Staff account</h2>
 <div class="btn-group">
-<?php echo '<a href="'.site_url('staff/show_staff').'"><span class="btn">view staff</btn> </a>';
+<?php echo '<a href="'.site_url('staff/show_staff').'"><span class="btn">staff</btn> </a>';
 
-echo '<a href="'.site_url('owner/show_owner').'"><span class="btn">view owners</btn> </a>';
+echo '<a href="'.site_url('owner/show_owner').'"><span class="btn">owners</btn> </a>';
 
-echo '<a href="'.site_url('animal/show_animals').'"><span class="btn">view animals</btn> </a>';
+echo '<a href="'.site_url('animal/show_animals').'"><span class="btn">animals</btn> </a>';
 
-echo '<a href="'.site_url('stay/show_stay').'"><span class="btn">view stays</btn> </a>';
+echo '<a href="'.site_url('stay/show_stay').'"><span class="btn">stays</btn> </a>';
 
-echo '<a href="'.site_url('login_staff/logout').'"><span class="btn">Staff Logout</btn> </a>';
+echo '<a href="'.site_url('login_staff/logout').'"><span class="btn">logout</btn> </a>';
  ?>
- <hr>
  </div>
+<br>
+<hr>
+<br>

@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+    <center>
+      <br><br><br><br><br>
     <div class="centered">
       <h3>Owner login</h3>
       <form class="" action="<?php echo site_url('login_owner/login'); ?>" method="post">
@@ -16,3 +18,4 @@
         <input type="submit" name="" value="Login">
       </form>
     </div>
+  </center>

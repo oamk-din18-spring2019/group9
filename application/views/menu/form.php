@@ -14,21 +14,22 @@
 <!--
 <div class="container">
   <img src="<?php echo base_url('pictures/sc-Ultra-suite-w-Dogs.jpg');?>" >
-  <div class="topright">Owner login</div>
 </div>
 -->
     <div class="main">
-    <?php echo '<a href="'.site_url('welcome/index').'">pet rest</a><br>';
+    <h1>pet rest</h1><br>
+    <?php
     echo '<a href="'.site_url('login_owner/owner_login').'"><span class="btn"> Owner login</btn> </a>';
     echo" <br>";
-    ?>
+     ?>
+
     <hr>
     </div>
 
     <form id=sourceForm action="<?php echo site_url('owner/transfer_animal_value');?>" method="post" class="name" style="height:100%;">
-        <fieldset >
 
-            <div class="animal"><legend>Pet</legend></div>
+        <fieldset >
+          <div class="animal"><legend>Pet</legend></div>
       <div class="pet">
 
         <label for="Cat">Cat</label>
@@ -47,15 +48,19 @@
             <input type="submit" name="" value="Book Now">
             <br>
         </fieldset>
+
+
+    </form>
+
         <br>
 
     <hr>
 
     <div class="container">
     <button type="button" class="btn " data-toggle="collapse" data-target="#demo">About</button>
-    <?php //echo '<span class="btn" data-toggle="collapse" data-target="#demo">About</btn> '; ?>
 
       <div id="demo" class="collapse">
+
         <h3>Our prices</h3>
         <i><b>Cats: </b>40e/day</i><br>
         <i><b>Dogs: </b>50e/day</i><br>
@@ -126,5 +131,5 @@
       ?>
     </div>
 -->
-    </form>
+
 <hr>

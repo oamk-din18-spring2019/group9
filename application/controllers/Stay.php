@@ -16,12 +16,12 @@ class Stay extends CI_Controller
   {
     $data['Stay']=$this->Stay_model->getStay();
     $data['page']='Stay/show_stay';
-    $this->load->view('Stay/show_stay', $data);
+    $this->load->view('staff/staff_content', $data);
   }
 function add_stay(){
   //print_r($this->input->post());
   $insert_data=array(
-    "owner_id"=>$this->input()->post('owner_id'),  
+    "owner_id"=>$this->input()->post('owner_id'),
     "animal_id"=>$this->input()->post('animal_id'),
     "room_id"=>$this->input()->post('room_id'),
     "stay_price"=>$this->input()->post('stay_price'),
