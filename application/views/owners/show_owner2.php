@@ -8,9 +8,6 @@
     <?php
 
 
-
-
-
     foreach ($owner as $row) {
       echo '<tr>';
        echo '<td>'.$row['owner_id'].'</td>';

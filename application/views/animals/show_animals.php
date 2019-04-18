@@ -3,7 +3,7 @@
   <thead>
 
     <tr><th>ID</th><th>Name</th><th>Species</th><th>Description</th><th>Food</th><th>Medical details</th><th>instruction</th>
-      <th>Check-in date</th><th>Check-out date</th><th>Edit</th></tr>
+      <th>Edit</th></tr>
 
   </thead>
   <tbody>
@@ -18,8 +18,7 @@
        echo '<td>'.$row['animal_food'].'</td>';
        echo '<td>'.$row['animal_medical'].'</td>';
        echo '<td>'.$row['animal_instruction'].'</td>';
-        echo '<td></td>';
-         echo '<td></td>';
+
         echo '<td><a href="'.site_url('animal/show_edit/').$row['animal_id'].'"><button>EDIT</button></a></td>';
       echo '</tr>';
     }

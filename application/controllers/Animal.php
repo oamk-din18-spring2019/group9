@@ -12,15 +12,6 @@ class Animal extends CI_Controller{
 
   }
 
-  function show_animals()
-  {
-      $data['animal']=$this->Animals_model->get_animals();
-      $data['page']='animals/show_animals';
-      $this->load->view('staff/staff_content',$data);
-
-
-  }
-
 function show_animals(){
   $data['animal']=$this->Animals_model->get_animals();
   $data['page']='animals/show_animals';
@@ -91,6 +82,37 @@ function show_animal(){
     $insert_animal=array(
       "animal_id"=>$this->input->post('animal_id'),
       "animal_name"=>$this->input->post('animal_name'),
+      "animal_species"=>$this->input->post('animal_species'),
+      "animal_description"=>$this->input->post('animal_description'),
+      "animal_food"=>$this->input->post('animal_food'),
+      "animal_medical"=>$this->input->post('animal_medical'),
+      "animal_instruction"=>$this->input->post('animal_instruction')
+    );
+    $result1=$this->Animals_model->add_animal($insert_animal);
+    //price and $room_id
+    $this->load->model('Room_model');
+    //find free room
+    $id_free_room=$this->Room_model->get_free_id($_SESSION['arrival'], $_SESSION['depart'], $_SESSION['species']);
+  //  $stay_duration=$this->Room_model->stay_duration($id_free_room);
+    $stay_duration= round(abs(strtotime($_SESSION['depart']) - strtotime($_SESSION['arrival']))/86400);
+
+    //echo 'duration = '.$stay_duration;
+
+    $price=$this->calculate_price($stay_duration, $id_free_room);
+  //  echo 'price ='.$price;
+    $insert_stays=array(
+      "animal_id"=>$this->input->post('animal_id'),
+      "owner_id"=>$this->input->post('owner_id'),
+      "stay_price"=>$price,
+      "room_id"=>$id_free_room,
+      "check_in"=>$_SESSION['arrival'],
+      "check_out"=>$_SESSION['depart']
+    );
+    $result2=$this->Stay_model->add_stay($insert_stays);
+    $page=$result1 ? 'animals/confirmation' : 'animals/error';
+    $this->load->view($page);
+  }
+
 
   function calculate_price($duration, $room_id) {
     if ($room_id < 10) {
@@ -111,18 +133,17 @@ function show_animal(){
       "animal_food"=>$this->input->post('animal_food'),
       "animal_medical"=>$this->input->post('animal_medical'),
       "animal_instruction"=>$this->input->post('animal_instruction')
-    );    $result1=$this->Animals_model->add_animal($insert_animal);
+    );
+    /*  $result1=$this->Animals_model->add_animal($insert_animal);
     $insert_stays=array(
       "animal_id"=>$this->input->post('animal_id'),
       "owner_id"=>$this->input->post('owner_id'),
       "check_in"=>$this->input->post('check_in'),
       "check_out"=>$this->input->post('check_out')
     );
-    $result2=$this->Stay_model->add_stay($insert_stays);
+   $result2=$this->Stay_model->add_stay($insert_stays);
     $page=$result1 ? 'animals/confirmation_of_new_animal' : 'animals/error';
-    $this->load->view($page);
-  }
-
+    $this->load->view($page);*/
     $result=$this->Animals_model->edit_animal($update_data,$id);
     if ($result==1) {
       redirect('animal/show_animals');
