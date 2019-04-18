@@ -6,6 +6,7 @@ class Animal extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
+
     $this->load->model('Stay_model');
     $this->load->model('Animals_model');
 
@@ -17,8 +18,14 @@ class Animal extends CI_Controller{
       $data['page']='animals/show_animals';
       $this->load->view('staff/staff_content',$data);
 
+
   }
 
+function show_animals(){
+  $data['animal']=$this->Animals_model->get_animals();
+  $data['page']='animals/show_animals';
+  $this->load->view('staff/staff_content',$data);
+}
   function add_animal_form(){
     $data['page']='animals/add_form';
     $this->load->model('Animals_model');
@@ -62,6 +69,7 @@ class Animal extends CI_Controller{
     $page=$result1 ? 'animals/confirmation' : 'animals/error';
     $this->load->view($page);
   }
+
   function calculate_price($duration, $room_id) {
     if ($room_id < 10) {
       return 40 * $duration;
@@ -70,5 +78,34 @@ class Animal extends CI_Controller{
       return 50 * $duration;
     }
   }
+
+  function edit_animal(){
+    $this->load->model('Animals_model');
+    $id=$this->input->post('id');
+    $update_data=array(
+      "animal_species"=>$this->input->post('animal_species'),
+      "animal_description"=>$this->input->post('animal_description'),
+      "animal_food"=>$this->input->post('animal_food'),
+      "animal_medical"=>$this->input->post('animal_medical'),
+      "animal_instruction"=>$this->input->post('animal_instruction')
+    );
+    $result=$this->Animals_model->edit_animal($update_data,$id);
+    if ($result==1) {
+      redirect('animal/show_animals');
+    }
+    else {
+      $data['page']='animals/edit_error';
+      $this->load->view('staff/staff_content',$data);
+    }
+  }
+  function show_edit($id){
+    $this->load->model('Animals_model');
+  $data['animal']=$this->Animals_model->get_chosen($id);
+  $data['current_id']=$id;
+  $data['page']='animals/edit_form';
+  $this->load->view('animals/animal_content',$data);
+  }
+
+
 
 }

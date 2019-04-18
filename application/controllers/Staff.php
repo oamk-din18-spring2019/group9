@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class staff extends CI_Controller{
+class Staff extends CI_Controller{
 
   public function __construct()
   {
@@ -28,18 +28,19 @@ class staff extends CI_Controller{
 
       function show_owners()
       {
-        $this->load->model('Staff_model');
-        $data['staff']=$this->Staff_model->get_staff_users();
-        $data['page']='staff/show_staff';
-        $this->load->view('menu/form',$data);
+        $data['owner']=$this->Owners_model->get_owner_users();
+        $data['page']='owners/show_owners';
+        $this->load->view('owners/show_owner',$data);
 
       }
+
+
 
 
       function add_staff_user_form(){
         $data['page']='staff/add_staff_user_form';
         $this->load->model('Staff_model');
-        $data['new_id']=$this->Staff_model->getNewId()+1;
+        $data['New_staff_id']=$this->Staff_model->getNewId()+1;
         $this->load->view('menu/content',$data);
       }
       function add_staff_user(){
@@ -108,6 +109,7 @@ function edit_staff(){
   }
 }
 
+
   function show_room_info() {
     $this->load->model('Room_model');
     //find free room
@@ -135,6 +137,24 @@ function edit_staff(){
 
 }
 
+
+  function delete_staff($id){
+      $this->Staff_model->delete_staff($id);
+      redirect('staff/show_staff');
+    }
+
+  function show_delete($id){
+        $data['chosen_staff']=$this->Staff_model->get_chosen($id);
+        $data['page']='staff/delete_staff';
+        $this->load->view('menu/content',$data);
+      }
+
+
+
 }
+
+
+
+
 
   ?>
