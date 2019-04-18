@@ -37,7 +37,7 @@ class Room extends CI_Controller{
 */
   function show_room(){
     $this->load->model('Room_model');
-    $data['room']=$this->Room_model->show_stay_duration();
+    $data['room']=$this->Room_model->stay_duration();
     $data['page']='room/show_room';
     $this->load->view('staff/staff_content', $data);
   }

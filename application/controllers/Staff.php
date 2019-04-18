@@ -110,7 +110,7 @@ function edit_staff(){
 
   function show_room_info() {
     $this->load->model('Room_model');
-    //etsi vapaa huone
+    //find free room
     $id_free_room=$this->Room_model->get_free_id($_SESSION['arrival'], $_SESSION['depart'], $_SESSION['species']);
     echo 'id='.$id_free_room;
     echo 'species='.$_SESSION['species'];
@@ -118,12 +118,12 @@ function edit_staff(){
       "room_id"=>$this->input->post('room_id'),
       "stay_duration"=>$this->input->post('stay_duration'),
       "stay_price"=>$this->input->post('stay_price')
-    );
-    $data['duration']=$this->Room_model->stay_duration();
+    );*/
+    $data['duration']=$this->Room_model->stay_duration($free_id);
     $data['price']=$this->calculate_price($data['duration'], $this->input->post('room_id'));
     //$data['cost']=$this->Room_model->stay_cost();
     $this->load->view('room/show_room',$data);
-  */}
+  }
 
   function calculate_price($duration, $room_id) {
   if ($room_id < 10) {
