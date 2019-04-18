@@ -118,7 +118,7 @@ function edit_staff(){
   function show_delete($id){
         $data['chosen_staff']=$this->Staff_model->get_chosen($id);
         $data['page']='staff/delete_staff';
-        $this->load->view('menu/content',$data);
+        $this->load->view('staff/staff_content',$data);
       }
 
 

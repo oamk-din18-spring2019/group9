@@ -66,6 +66,16 @@ class Owner extends CI_Controller{
 
 }
 
+function show_owner2()
+{
+
+$data['owner']=$this->Owners_model->get_owner();
+$data['page']='owners/show_owner2';
+$this->load->view('owners/owner_content',$data);
+
+}
+
+
 function add_owner_user_form(){
   $data['page']='owners/add_owner_user_form';
   $this->load->model('Owners_model');

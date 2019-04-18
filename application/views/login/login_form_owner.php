@@ -8,7 +8,7 @@
   <body>
     <div class="centered">
       <h3>Owner login</h3>
-      <form class="" action="<?php echo site_url('login_owner/login'); ?>" method="post">
+      <form class="" action="<?php echo site_url('login_owner/do_login'); ?>" method="post">
         <label for="">username</label><br>
         <input type="text" name="owner_username" value=""><br>
         <label for="">password</label><br>
