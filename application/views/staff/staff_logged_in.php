@@ -19,7 +19,9 @@ echo '<a href="'.site_url('animal/show_animals').'"><span class="btn">animals</b
 
 echo '<a href="'.site_url('stay/show_stay').'"><span class="btn">stays</btn> </a>';
 
+
 echo '<a href="'.site_url('login_staff/logout').'"><span class="btn">logout</btn> </a>';
+
  ?>
  </div>
 <br>

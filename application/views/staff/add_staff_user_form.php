@@ -3,7 +3,10 @@
 
 <p>
 <form class="" action="<?php  echo site_url('staff/add_staff_user'); ?>" method="post">
-<input type="hidden" name="staff_id" value="<?php echo $new_id; ?>"> <br>
+<<<<<<< HEAD
+<label for="">ID</label> <br>
+<input type="hidden" name="staff_id" value="<?php echo $New_staff_id; ?>"> <br>
+
 <label for="">Firstname</label><br>
 <input type="text" name="staff_fname" value=""><br>
 <label for="">Lastname</label><br>

@@ -25,16 +25,16 @@ function add_stay(){
     "animal_id"=>$this->input()->post('animal_id'),
     "room_id"=>$this->input()->post('room_id'),
     "stay_price"=>$this->input()->post('stay_price'),
-    "Check_in"=>$this->input()->post('Check_in'),
-    "Check_out"=>$this->input()->post('Check_out'),
+    "check_in"=>$this->input()->post('check_in'),
+    "check_out"=>$this->input()->post('check_out'),
   );
-   $result=$this->Stay_model->add_stay($insert_data);
+   /*$result=$this->Stay_model->add_stay($insert_data);
   if ($result==1) {
     $data['message']="You have added a new customer";
   }
   else {
     $data['message']="Something went wrong!";
-  }
+  }*/
   $data['page']='Stay/add_info';
   $this->load->view('Stay/show_stay',$data);
 }

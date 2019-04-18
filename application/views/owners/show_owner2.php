@@ -6,6 +6,11 @@
   <tbody>
 
     <?php
+
+
+
+
+
     foreach ($owner as $row) {
       echo '<tr>';
        echo '<td>'.$row['owner_id'].'</td>';
@@ -13,9 +18,10 @@
        echo '<td>'.$row['owner_lname'].'</td>';
        echo '<td>'.$row['owner_phone'].'</td>';
        echo '<td>'.$row['owner_birthday'].'</td>';
-       echo '<td><a href="'.site_url('owner/show_edit/').$row['owner_id'].'"><button>EDIT</button></a></td>';
       echo '</tr>';
     }
-    ?>
-  </tbody>
+
+
+?>
+</tbody>
 </table>
