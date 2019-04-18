@@ -6,8 +6,19 @@ class Animal extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-      $this->load->model('Stay_model');
-      $this->load->model('Animals_model');
+
+    $this->load->model('Stay_model');
+    $this->load->model('Animals_model');
+
+  }
+
+  function show_animals()
+  {
+      $data['animal']=$this->Animals_model->get_animals();
+      $data['page']='animals/show_animals';
+      $this->load->view('staff/staff_content',$data);
+
+
   }
 
 function show_animals(){
@@ -22,6 +33,7 @@ function show_animals(){
     $this->load->view('menu/content',$data);
   }
 
+
   function add_animal(){
     //$this->load->model('Animals_model');
     $insert_animal=array(
@@ -34,9 +46,22 @@ function show_animals(){
       "animal_instruction"=>$this->input->post('animal_instruction')
     );
     $result1=$this->Animals_model->add_animal($insert_animal);
+    //price and $room_id
+    $this->load->model('Room_model');
+    //find free room
+    $id_free_room=$this->Room_model->get_free_id($_SESSION['arrival'], $_SESSION['depart'], $_SESSION['species']);
+  //  $stay_duration=$this->Room_model->stay_duration($id_free_room);
+    $stay_duration= round(abs(strtotime($_SESSION['depart']) - strtotime($_SESSION['arrival']))/86400);
+
+    //echo 'duration = '.$stay_duration;
+
+    $price=$this->calculate_price($stay_duration, $id_free_room);
+  //  echo 'price ='.$price;
     $insert_stays=array(
       "animal_id"=>$this->input->post('animal_id'),
       "owner_id"=>$this->input->post('owner_id'),
+      "stay_price"=>$price,
+      "room_id"=>$id_free_room,
       "check_in"=>$this->input->post('animal_arrival'),
       "check_out"=>$this->input->post('animal_depart')
     );
@@ -44,6 +69,16 @@ function show_animals(){
     $page=$result1 ? 'animals/confirmation' : 'animals/error';
     $this->load->view($page);
   }
+
+  function calculate_price($duration, $room_id) {
+    if ($room_id < 10) {
+      return 40 * $duration;
+    }
+    else  {
+      return 50 * $duration;
+    }
+  }
+
   function edit_animal(){
     $this->load->model('Animals_model');
     $id=$this->input->post('id');
@@ -70,6 +105,7 @@ function show_animals(){
   $data['page']='animals/edit_form';
   $this->load->view('animals/animal_content',$data);
   }
+
 
 
 }

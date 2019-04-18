@@ -53,8 +53,11 @@ class Owner extends CI_Controller{
       $this->load->model('Owners_model');
         $data['new_owner_id']=$this->Owners_model->getNewId()+1;
         $data['set_arrival']=$this->input->post('arrival');
+        $_SESSION['arrival']=$this->input->post('arrival');
         $data['set_depart']=$this->input->post('depart');
+        $_SESSION['depart']=$this->input->post('depart');
         $data['set_species']=$this->input->post('species');
+        $_SESSION['species']=$this->input->post('species');
         $this->load->view('owners/add_form',$data);
     }
 

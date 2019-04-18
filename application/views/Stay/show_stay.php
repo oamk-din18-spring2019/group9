@@ -14,8 +14,8 @@
             <th>Cost</th>
             <th>Check-in date</th>
             <th>Check-out date</th>
-            <th></th>
-            
+
+
 </tr>
 </thead>
 <tbody>
@@ -27,8 +27,8 @@
         echo '<td>'.$row['animal_id'].'</td>';
         echo '<td>'.$row['room_id'].'</td>';
         echo '<td>'.$row['stay_price'].'</td>';
-        echo '<td>'.$row['Check_in'].'</td>';
-        echo '<td>'.$row['Check_out'].'</td>';
+        echo '<td>'.$row['check_in'].'</td>';
+        echo '<td>'.$row['check_out'].'</td>';
         echo '</tr>';
     }
     ?>
