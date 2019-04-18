@@ -26,6 +26,11 @@ function show_animals(){
   $data['page']='animals/show_animals';
   $this->load->view('staff/staff_content',$data);
 }
+function show_animal(){
+  $data['animal']=$this->Animals_model->get_animal();
+  $data['page']='animals/show_animal';
+  $this->load->view('owners/owner_content',$data);
+}
   function add_animal_form(){
     $data['page']='animals/add_form';
     $this->load->model('Animals_model');

@@ -8,6 +8,17 @@ class Owners_model extends CI_Model{
       $this->db->from('owner');
       return $this->db->get()->result_array();
     }
+
+    function get_owner(){
+      $owner_id= $_SESSION['owner_id'];
+      $this->db->select('*');
+      $this->db->from('owner');
+    $this->db->where('owner_id', $owner_id);
+    return $this->db->get()->result_array();
+
+  }
+
+
     function add_owner_user($insert_data){
       $this->db->db_debug = false;
       $this->db->insert('owner',$insert_data);
