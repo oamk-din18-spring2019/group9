@@ -1,10 +1,6 @@
-<center><h2>Stays</h2></center>
-<?php
-//print_r('stays')
+<h2>Stays</h2>
 
-?>
-
-<center><table class="table table-hover" border="1"" >
+<table class="table table-hover" border="1" >
 
     <thead>
         <tr>
@@ -34,4 +30,3 @@
     ?>
 </tbody>
 </table>
-</center>

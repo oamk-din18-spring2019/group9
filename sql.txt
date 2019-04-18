@@ -37,9 +37,15 @@ stay_price VARCHAR(255)) Engine=InnoDB;
 
 
 CREATE TABLE stays(
+
+owner_id SMALLINT,
+animal_id SMALLINT PRIMARY KEY,
+room_id SMALLINT,
+
 owner_id SMALLINT ,
 animal_id SMALLINT PRIMARY KEY,
 room_id SMALLINT ,
+
 stay_price VARCHAR(255),
 check_in VARCHAR(255),
 check_out VARCHAR(255),
@@ -49,8 +55,7 @@ FOREIGN KEY(animal_id) REFERENCES animal(animal_id)
 	ON DELETE RESTRICT ON UPDATE CASCADE) Engine=InnoDB;
 
 grant all on hotel.* to 'hoteluser'@'localhost' IDENTIFIED BY 'hotelpass';
-<<<<<<< HEAD
-=======
+
 
 
 CREATE TABLE room(
@@ -79,4 +84,9 @@ drop column animal_arrival;
 ALTER TABLE animal
 drop column animal_depart;
 
-drop table stays
+
+16.4
+
+drop table stays;
+
+

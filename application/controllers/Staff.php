@@ -26,6 +26,7 @@ class Staff extends CI_Controller{
 
   }
 
+
       function show_owners()
       {
         $data['owner']=$this->Owners_model->get_owner_users();
@@ -33,6 +34,7 @@ class Staff extends CI_Controller{
         $this->load->view('owners/show_owner',$data);
 
       }
+
 
 
 
@@ -60,14 +62,6 @@ class Staff extends CI_Controller{
         $this->load->view('menu/content',$data);
       }
 
-
-  function show_animals()
-  {
-    $data['animals']=$this->animals_model->getanimals();
-    $data['page']='animals/show_animals';
-    $this->load->view('menu/content',$data);
-
-  }
 
   function show_stays()
   {
