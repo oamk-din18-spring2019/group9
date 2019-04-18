@@ -6,6 +6,7 @@ class Animal extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('Stay_model');
     $this->load->model('Animals_model');
 
   }
