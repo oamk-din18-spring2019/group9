@@ -33,5 +33,10 @@ class Animals_model extends CI_Model{
       $this->db->from('animal');
       return $this->db->get()->result_array();
     }
+    function get_animals_id(){
+      $this->db->select('*');
+      $this->db->from('stays');
+      return $this->db->get()->result_array();
+    }
 
 }

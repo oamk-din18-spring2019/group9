@@ -1,10 +1,5 @@
 <center><h2>Stays</h2></center>
-<?php
-//print_r('stays')
-
-?>
-
-<center><table class="table table-hover" border="1"" >
+<center><table class="table table-hover" border="1">
 
     <thead>
         <tr>
@@ -27,8 +22,8 @@
         echo '<td>'.$row['animal_id'].'</td>';
         echo '<td>'.$row['room_id'].'</td>';
         echo '<td>'.$row['stay_price'].'</td>';
-        echo '<td>'.$row['Check_in'].'</td>';
-        echo '<td>'.$row['Check_out'].'</td>';
+        echo '<td>'.$row['Checkin'].'</td>';
+        echo '<td>'.$row['Checkout'].'</td>';
         echo '</tr>';
     }
     ?>

@@ -16,6 +16,8 @@
        echo '<td>'.$row['animal_food'].'</td>';
        echo '<td>'.$row['animal_medical'].'</td>';
        echo '<td>'.$row['animal_instruction'].'</td>';
+       
+
       echo '</tr>';
     }
     /*
@@ -26,4 +28,7 @@
     */
     ?>
   </tbody>
+
 </table>
+
+
