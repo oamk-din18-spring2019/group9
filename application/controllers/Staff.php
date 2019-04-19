@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class staff extends CI_Controller{
+class Staff extends CI_Controller{
 
   public function __construct()
   {
@@ -26,20 +26,23 @@ class staff extends CI_Controller{
 
   }
 
+
       function show_owners()
       {
-        $this->load->model('Staff_model');
-        $data['staff']=$this->Staff_model->get_staff_users();
-        $data['page']='staff/show_staff';
-        $this->load->view('menu/form',$data);
+        $data['owner']=$this->Owners_model->get_owner_users();
+        $data['page']='owners/show_owners';
+        $this->load->view('owners/show_owner',$data);
 
       }
+
+
+
 
 
       function add_staff_user_form(){
         $data['page']='staff/add_staff_user_form';
         $this->load->model('Staff_model');
-        $data['new_id']=$this->Staff_model->getNewId()+1;
+        $data['New_staff_id']=$this->Staff_model->getNewId()+1;
         $this->load->view('menu/content',$data);
       }
       function add_staff_user(){
@@ -59,14 +62,6 @@ class staff extends CI_Controller{
         $this->load->view('menu/content',$data);
       }
 
-
-  function show_animals()
-  {
-    $data['animals']=$this->animals_model->getanimals();
-    $data['page']='animals/show_animals';
-    $this->load->view('menu/content',$data);
-
-  }
 
   function show_stays()
   {
@@ -109,6 +104,54 @@ function edit_staff(){
 }
 
 
+<<<<<<< HEAD
+=======
+  function show_room_info() {
+    $this->load->model('Room_model');
+    //find free room
+    $id_free_room=$this->Room_model->get_free_id($_SESSION['arrival'], $_SESSION['depart'], $_SESSION['species']);
+    echo 'id='.$id_free_room;
+    echo 'species='.$_SESSION['species'];
+    /*$insert_data=array(
+      "room_id"=>$this->input->post('room_id'),
+      "stay_duration"=>$this->input->post('stay_duration'),
+      "stay_price"=>$this->input->post('stay_price')
+    );*/
+    $data['duration']=$this->Room_model->stay_duration($free_id);
+    $data['price']=$this->calculate_price($data['duration'], $this->input->post('room_id'));
+    //$data['cost']=$this->Room_model->stay_cost();
+    $this->load->view('room/show_room',$data);
+  }
+
+  function calculate_price($duration, $room_id) {
+  if ($room_id < 10) {
+    return 40 * $duration;
+  }
+  else  {
+    return 50 * $duration;
+  }
+
 }
+
+
+  function delete_staff($id){
+      $this->Staff_model->delete_staff($id);
+      redirect('staff/show_staff');
+    }
+
+  function show_delete($id){
+        $data['chosen_staff']=$this->Staff_model->get_chosen($id);
+        $data['page']='staff/delete_staff';
+        $this->load->view('staff/staff_content',$data);
+      }
+
+
+
+>>>>>>> master
+}
+
+
+
+
 
   ?>

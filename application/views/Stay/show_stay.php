@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 <center><h2>Stays</h2></center>
 <center><table class="table table-hover" border="1">
+=======
+<h2>Stays</h2>
+
+<table class="table table-hover" border="1" >
+>>>>>>> master
 
     <thead>
         <tr>
@@ -9,8 +15,8 @@
             <th>Cost</th>
             <th>Check-in date</th>
             <th>Check-out date</th>
-            <th></th>
-            
+
+
 </tr>
 </thead>
 <tbody>
@@ -22,11 +28,15 @@
         echo '<td>'.$row['animal_id'].'</td>';
         echo '<td>'.$row['room_id'].'</td>';
         echo '<td>'.$row['stay_price'].'</td>';
+<<<<<<< HEAD
         echo '<td>'.$row['Checkin'].'</td>';
         echo '<td>'.$row['Checkout'].'</td>';
+=======
+        echo '<td>'.$row['check_in'].'</td>';
+        echo '<td>'.$row['check_out'].'</td>';
+>>>>>>> master
         echo '</tr>';
     }
     ?>
 </tbody>
 </table>
-</center>

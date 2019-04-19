@@ -16,22 +16,22 @@
       <input type="hidden" name="owner_id" value="<?php echo $new_owner_id; ?>"><br>
 
       <label for="">Firstname</label><br>
-      <input type="text" name="fname" value=""><br>
+      <input type="text" name="fname" value=""required><br>
 
       <label for="">Lastname</label><br>
-      <input type="text" name="lname" value=""><br>
+      <input type="text" name="lname" value=""required><br>
 
       <label for="">Phone number</label><br>
-      <input type="number" name="phone" value=""><br>
+      <input type="number" name="phone" value=""required><br>
 
       <label for="">Date of birth</label><br>
-      <input type="date" name="birthday" value=""><br>
+      <input type="date" name="birthday" value="" required><br>
 
       <label for="">Username</label><br>
-      <input type="text" name="username" value=""><br>
+      <input type="text" name="username" value=""required><br>
 
       <label for="">Password</label><br>
-      <input type="text" name="password" value="">
+      <input type="password" name="password" value=""required>
       <br><br>
 
       <input type="submit" name="" value="Continue">

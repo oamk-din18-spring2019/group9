@@ -7,7 +7,7 @@ owner_id SMALLINT PRIMARY KEY,
 owner_fname VARCHAR(255),
 owner_lname VARCHAR(255),
 owner_phone VARCHAR(255),
-owner_username VARCHAR(255),
+owner_username VARCHAR(255) ,
 owner_password VARCHAR(255),
 owner_birthday VARCHAR(255)) Engine=InnoDB;
 
@@ -35,20 +35,27 @@ CREATE TABLE room(
 room_id SMALLINT PRIMARY KEY,
 stay_price VARCHAR(255)) Engine=InnoDB;
 
- 
+
 CREATE TABLE stays(
-owner_id SMALLINT PRIMARY KEY,
-animal_id SMALLINT,
+
+owner_id SMALLINT,
+animal_id SMALLINT PRIMARY KEY,
+room_id SMALLINT,
+
+owner_id SMALLINT ,
+animal_id SMALLINT PRIMARY KEY,
 room_id SMALLINT ,
+
 stay_price VARCHAR(255),
+check_in VARCHAR(255),
+check_out VARCHAR(255),
 FOREIGN KEY(owner_id) REFERENCES owner(owner_id)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
 FOREIGN KEY(animal_id) REFERENCES animal(animal_id)
 	ON DELETE RESTRICT ON UPDATE CASCADE) Engine=InnoDB;
 
 grant all on hotel.* to 'hoteluser'@'localhost' IDENTIFIED BY 'hotelpass';
-<<<<<<< HEAD
-=======
+
 
 
 CREATE TABLE room(
@@ -77,4 +84,9 @@ drop column animal_arrival;
 ALTER TABLE animal
 drop column animal_depart;
 
->>>>>>> 500d07c28a9119b018499416429deb8ea2e02289
+
+16.4
+
+drop table stays;
+
+

@@ -51,6 +51,9 @@ class Staff_model extends CI_Model{
   $this->db->update('staff',$update_data);
   return $this->db->affected_rows();
 }
-
+public function delete_staff($id){
+    $this->db->where('staff_id',$id);
+    $this->db->delete('staff');
   }
+}
 ?>
