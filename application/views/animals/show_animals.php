@@ -18,7 +18,6 @@
        echo '<td>'.$row['animal_food'].'</td>';
        echo '<td>'.$row['animal_medical'].'</td>';
        echo '<td>'.$row['animal_instruction'].'</td>';
-
         echo '<td><a href="'.site_url('animal/show_edit/').$row['animal_id'].'"><button>EDIT</button></a></td>';
       echo '</tr>';
     }

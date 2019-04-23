@@ -51,8 +51,9 @@
       <textarea id="animal_instruction" name="animal_instruction"></textarea>
       <br><br>
 
-      <input type="submit" name="" value="Confirm">
       <a href="<?php echo site_url('owner/index');?>"><span class="btn btn-primary">Cancel</span></a>
+      <input type="submit" name="" value="Confirm">
+
 
     </form>
   </body>
