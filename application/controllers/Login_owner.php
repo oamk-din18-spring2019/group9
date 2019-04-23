@@ -15,8 +15,10 @@ class Login_owner extends CI_Controller{
 
   }
 
+
 /*
   function login(){
+
     $_SESSION['logged_in']=false;
     $this->load->model('Login_model_owner');
     $givenOwnerUser = $this->input->post('owner_username');
@@ -36,11 +38,12 @@ class Login_owner extends CI_Controller{
       $_SESSION['owner_logged_in'] = false;
       redirect('login_owner/menu');
     }
+*/
 
-
-  function login(){
+  /*function login(){
     $data['page'] = 'login/login_form_owner';
     $this->load->view('menu/content', $data);
+
   }
   */
   function do_login(){

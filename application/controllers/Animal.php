@@ -12,6 +12,7 @@ class Animal extends CI_Controller{
 
   }
 
+
   function show_animals()
   {
       $data['animal']=$this->Animals_model->get_animals();
@@ -150,38 +151,7 @@ function add_new_animal(){
   $this->load->view($page);
 
 }
-/*
-function edit_animal(){
-    $this->load->model('Animals_model');
-    $id=$this->input->post('id');
-    $update_data=array(
-      "animal_species"=>$this->input->post('animal_species'),
-      "animal_description"=>$this->input->post('animal_description'),
-      "animal_food"=>$this->input->post('animal_food'),
-      "animal_medical"=>$this->input->post('animal_medical'),
-      "animal_instruction"=>$this->input->post('animal_instruction')
-    );
-    $result1=$this->Animals_model->add_animal($insert_animal);
-    $insert_stays=array(
-      "animal_id"=>$this->input->post('animal_id'),
-      "owner_id"=>$this->input->post('owner_id'),
-      "check_in"=>$this->input->post('check_in'),
-      "check_out"=>$this->input->post('check_out')
-    );
-    $result2=$this->Stay_model->add_stay($insert_stays);
-    $page=$result1 ? 'animals/confirmation_of_new_animal' : 'animals/error';
-    $this->load->view($page);
-    $result=$this->Animals_model->edit_animal($update_data,$id);
 
-    if ($result==1) {
-      redirect('animal/show_animals');
-    }
-    else {
-      $data['page']='animals/edit_error';
-      $this->load->view('staff/staff_content',$data);
-    }
-  }
-*/
   function show_edit($id){
     $this->load->model('Animals_model');
   $data['animal']=$this->Animals_model->get_chosen($id);
