@@ -2,8 +2,7 @@
 defined ('BASEPATH') OR exit('No direct script access allowed');
 
 
-class Login_owner extends CI_Controller
-{
+class Login_owner extends CI_Controller{
 
 
   function menu(){
@@ -17,7 +16,9 @@ class Login_owner extends CI_Controller
   }
 
 
-  /*function login(){
+/*
+  function login(){
+
     $_SESSION['logged_in']=false;
     $this->load->model('Login_model_owner');
     $givenOwnerUser = $this->input->post('owner_username');
@@ -29,7 +30,7 @@ class Login_owner extends CI_Controller
       $_SESSION['logged_in']=true;
       $_SESSION['owner_logged_in'] = true;
       $_SESSION['owner_username'] = $givenOwnerUser;
-      $_SESSION['owner_id'] = $this->Login_model_owner->getOwnerID($givenOwnerUser);
+      $_SESSION['owner_id'] = $this->Login_model_owner->get_owner_id($givenOwnerUser);
       $data['page'] = 'login/personal_page_owner';
       $this->load->view('owners/owner_content', $data);
     }
@@ -42,9 +43,11 @@ class Login_owner extends CI_Controller
   /*function login(){
     $data['page'] = 'login/login_form_owner';
     $this->load->view('menu/content', $data);
-  } */
+
+  }
+  */
   function do_login(){
-  /*  print_r($this->input->post());*/
+  
 
       $_SESSION['logged_in']=false;
       $this->load->model('Login_model_owner');

@@ -18,15 +18,14 @@
   echo '<a href="'.site_url('animal/add_new_animal_form').'"><span class="btn">Make new reservation</btn> </a>';
   echo" <br>";
 
-  echo '<a href="'.site_url('login_owner/logout').'"><span class="btn">Owner Logout</btn> </a>';
+  echo '<a href="'.site_url('owner/show_owner2').'"><span class="btn">Personal info</btn> </a>';
   echo "<br>";
 
+  echo '<a href="'.site_url('animal/show_animal').'"><span class="btn">Pet info</btn> </a>';
+  echo "<br>";
 
-   echo '<a href="'.site_url('owner/show_owner2').'"><span class="btn">your info</btn> </a>';
-  echo '<a href="'.site_url('animal/show_animal').'"><span class="btn">your pet info</btn> </a>';
-
+  echo '<a href="'.site_url('login_owner/logout').'"><span class="btn">Owner Logout</btn> </a>';
   echo "<br>";
  ?>
      <hr>
 </div>
-
