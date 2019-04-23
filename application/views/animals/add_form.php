@@ -41,9 +41,10 @@
       <label for="animal_instruction">Your pet's special caring instructions</label><br>
       <textarea id="animal_instruction" name="animal_instruction"></textarea>
       <br><br>
-
-      <input type="submit" name="" value="Confirm">
+      
       <a href="<?php echo site_url();?>"><span class="btn btn-primary">Cancel</span></a>
+      <input type="submit" name="" value="Confirm">
+
 
     </form>
 
