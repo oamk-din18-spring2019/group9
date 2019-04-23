@@ -56,7 +56,7 @@ echo ("hello " .$nbrLigne);
    <tbody>
 <?php
 $response = $bdd->query('SELECT
-								owner_fname, owner_lname,animal_name,check_in,check_out ,stay_price
+								owner_fname, owner_lname,animal_name,checkin,checkout ,stay_price
 								FROM owner o , animal a , stays s
 								WHERE o.owner_id=s.owner_id AND a.animal_id=s.animal_id');
 

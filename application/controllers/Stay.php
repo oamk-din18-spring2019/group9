@@ -25,8 +25,8 @@ function add_stay(){
     "animal_id"=>$this->input()->post('animal_id'),
     "room_id"=>$this->input()->post('room_id'),
     "stay_price"=>$this->input()->post('stay_price'),
-    "check_in"=>$this->input()->post('check_in'),
-    "check_out"=>$this->input()->post('check_out'),
+    "checkin"=>$this->input()->post('checkin'),
+    "checkout"=>$this->input()->post('checkout'),
   );
    /*$result=$this->Stay_model->add_stay($insert_data);
   if ($result==1) {

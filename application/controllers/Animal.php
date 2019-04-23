@@ -59,8 +59,8 @@ function show_animal(){
       "owner_id"=>$this->input->post('owner_id'),
       "stay_price"=>$price,
       "room_id"=>$id_free_room,
-      "check_in"=>$this->input->post('animal_arrival'),
-      "check_out"=>$this->input->post('animal_depart')
+      "checkin"=>$this->input->post('animal_arrival'),
+      "checkout"=>$this->input->post('animal_depart')
     );
     $result2=$this->Stay_model->add_stay($insert_stays);
     $page=$result1 ? 'animals/confirmation' : 'animals/error';
@@ -105,8 +105,8 @@ function show_animal(){
       "owner_id"=>$this->input->post('owner_id'),
       "stay_price"=>$price,
       "room_id"=>$id_free_room,
-      "check_in"=>$_SESSION['arrival'],
-      "check_out"=>$_SESSION['depart']
+      "checkin"=>$_SESSION['arrival'],
+      "checkout"=>$_SESSION['depart']
     );
     $result2=$this->Stay_model->add_stay($insert_stays);
     $page=$result1 ? 'animals/confirmation' : 'animals/error';

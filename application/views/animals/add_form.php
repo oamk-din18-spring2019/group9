@@ -9,8 +9,8 @@
     <h2>Add your pet's information</h2>
     <?php echo $set_species;  ?>
     <form id=targetForm class="" action="<?php echo site_url('animal/add_animal'); ?>" method="post">
-      <input type="hidden" name="check_out" value="<?php echo $set_depart;?>">
-      <input type="hidden" name="check_in" value="<?php echo $set_arrival;?>">
+      <input type="hidden" name="checkout" value="<?php echo $set_depart;?>">
+      <input type="hidden" name="checkin" value="<?php echo $set_arrival;?>">
       <input type="hidden" name="animal_species" value="<?php echo $set_species;?>">
       <input type="hidden" name="owner_id" value="<?php echo $new_owner_id;?>">
       <input type="hidden" name="animal_id" value="<?php echo $new_id; ?>"><br>
@@ -20,11 +20,11 @@
 
 
 
-      <label for="check_in">Arrival date</label><br>
-      <input type="date" id="selected_arrival" name="check_in" value="<?php echo $set_arrival; ?>"><br>
+      <label for="checkin">Arrival date</label><br>
+      <input type="date" id="selected_arrival" name="checkin" value="<?php echo $set_arrival; ?>"><br>
 
-      <label for="check_out">Departure date</label><br>
-      <input type="date" id="selected_departure" name="check_out" value="<?php echo $set_depart; ?>"><br>
+      <label for="checkout">Departure date</label><br>
+      <input type="date" id="selected_departure" name="checkout" value="<?php echo $set_depart; ?>"><br>
 
       <label for="animal_description">Pet description</label><br>
       <textarea id="animal_description" name="animal_description" required></textarea>

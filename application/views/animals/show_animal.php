@@ -16,8 +16,8 @@
        echo '<td>'.$row['animal_food'].'</td>';
        echo '<td>'.$row['animal_medical'].'</td>';
        echo '<td>'.$row['animal_instruction'].'</td>';
-        echo '<td>'.$row['check_in'].'</td>';
-         echo '<td>'.$row['check_out'].'</td>';
+        echo '<td>'.$row['checkin'].'</td>';
+         echo '<td>'.$row['checkout'].'</td>';
 
       echo '</tr>';
     }
