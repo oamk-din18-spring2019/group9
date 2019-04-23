@@ -24,9 +24,9 @@
       <input id="Dog" type="radio" name="animal_species" value="Dog"> <br><br>
 
        <label for="date">Check-in date</label><br>
-       <input id="check_in" type="date" name="check_in" min="2019-01-01" required><br>
+       <input id="checkin" type="date" name="checkin" min="2019-01-01" required><br>
        <label for="date">Check-out date</label><br>
-       <input id="check_out" type="date" name="check_out" min="2019-01-01" required><br>
+       <input id="checkout" type="date" name="checkout" min="2019-01-01" required><br>
 
       <input type="hidden" name="owner_id" value="<?php echo $active_id; ?>">
 
@@ -51,8 +51,9 @@
       <textarea id="animal_instruction" name="animal_instruction"></textarea>
       <br><br>
 
-      <input type="submit" name="" value="Confirm">
       <a href="<?php echo site_url('owner/index');?>"><span class="btn btn-primary">Cancel</span></a>
+      <input type="submit" name="" value="Confirm">
+
 
     </form>
   </body>
