@@ -1,6 +1,7 @@
-<h2>Animals</h2>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css');  ?>">
+<center><h2 class="add">Animals</h2></center>
 <table border="1" class="table table-hover">
-  <thead>
+  <thead class="name">
 
     <tr><th>ID</th><th>Name</th><th>Species</th><th>Description</th><th>Food</th><th>Medical details</th><th>instruction</th>
       <th>Edit</th></tr>
@@ -18,7 +19,9 @@
        echo '<td>'.$row['animal_food'].'</td>';
        echo '<td>'.$row['animal_medical'].'</td>';
        echo '<td>'.$row['animal_instruction'].'</td>';
+
         echo '<td><a href="'.site_url('animal/show_edit/').$row['animal_id'].'"><button>EDIT</button></a></td>';
+
       echo '</tr>';
     }
     /*
@@ -29,4 +32,7 @@
     */
     ?>
   </tbody>
+
 </table>
+
+

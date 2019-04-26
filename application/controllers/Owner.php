@@ -122,15 +122,15 @@ function edit_owner(){
     redirect('owner/show_owner');
   }
   else {
-    $data['page']='welcome_message';
-    $this->load->view('owners/show_owner');
+    $data['page']='owners/show_owner';
+    $this->load->view('staff/staff_content', $data);
   }
 }
 function show_edit($id){
 $data['owner']=$this->Owners_model->get_chosen($id);
 $data['current_id']=$id;
 $data['page']='owners/edit_form';
-$this->load->view('owners/owner_content',$data);
+$this->load->view('staff/staff_content',$data);
 }
 
 }

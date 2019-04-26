@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css');  ?>">
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <center><div class="title1"><h1>PET REST</h1></div></center>
   </head>
-  <body>
-    <h2>Add your pet's information</h2>
+  <body class="body1">
+    <center><h2 class="add">Add your pet's information</h2>
     <?php echo $set_species;  ?>
-    <form id=targetForm class="" action="<?php echo site_url('animal/add_animal'); ?>" method="post">
+    <center><form id=targetForm class="" action="<?php echo site_url('animal/add_animal'); ?>" method="post">
       <input type="hidden" name="check_out" value="<?php echo $set_depart;?>">
       <input type="hidden" name="check_in" value="<?php echo $set_arrival;?>">
       <input type="hidden" name="animal_species" value="<?php echo $set_species;?>">
@@ -42,11 +44,11 @@
       <textarea id="animal_instruction" name="animal_instruction"></textarea>
       <br><br>
       
-      <a href="<?php echo site_url();?>"><span class="btn btn-primary">Cancel</span></a>
+      <a href="<?php echo site_url();?>"><span class="btn"><button>Cancel</button></span></a>
       <input type="submit" name="" value="Confirm">
 
 
-    </form>
+    </form></center>
 
   </body>
 </html>

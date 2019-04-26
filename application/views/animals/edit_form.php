@@ -1,7 +1,8 @@
-<h2>Edit</h2>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css');  ?>">
+<center><h2 class="add">Edit</h2></center>
 <!--<?php print_r($animal); ?>-->
 
-<form class="" action="<?php  echo site_url('animal/edit_animal'); ?>" method="post">
+<center><form class="" action="<?php  echo site_url('animal/edit_animal'); ?>" method="post">
   <input type="hidden" name="id" value="<?php echo $animal[0]['animal_id']; ?>">
   <label for="">animal species</label><br>
   <input type="text" name="animal_species" value="<?php echo $animal[0]['animal_species']; ?>" > <br>
@@ -15,4 +16,4 @@
 <input type="text" name="animal_instruction" value="<?php echo $animal[0]['animal_instruction']; ?>"> <br><br>
 
 <input type="submit" name="" value="Add">
-</form>
+</form></center>
