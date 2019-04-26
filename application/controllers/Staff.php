@@ -104,8 +104,7 @@ function edit_staff(){
 }
 
 
-<<<<<<< HEAD
-=======
+
   function show_room_info() {
     $this->load->model('Room_model');
     //find free room
@@ -147,7 +146,7 @@ function edit_staff(){
 
 
 
->>>>>>> master
+
 }
 
 

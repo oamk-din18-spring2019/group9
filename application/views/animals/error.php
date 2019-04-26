@@ -7,5 +7,7 @@
   </head>
   <body>
     <p>Something went wrong!</p>
+    <?php echo $message; ?><br>
+    <?php echo '<a href="'.site_url('welcome/index').'"><span class="btn">Return</btn> </a>';?>
   </body>
 </html>

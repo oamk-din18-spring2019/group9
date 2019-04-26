@@ -1,6 +1,7 @@
-<h2>Animals</h2>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css');  ?>">
+<center><h2 class="add">animal</h2></center>
 <table border="1" class="table table-hover">
-  <thead>
+  <thead class="name">
     <tr><th>ID</th><th>Name</th><th>Species</th><th>Description</th><th>Food</th><th>Medical details</th><th>instruction</th>
       <th>Check-in date</th><th>Check-out date</th></tr>
   </thead>
@@ -16,8 +17,8 @@
        echo '<td>'.$row['animal_food'].'</td>';
        echo '<td>'.$row['animal_medical'].'</td>';
        echo '<td>'.$row['animal_instruction'].'</td>';
-        echo '<td>'.$row['checkin'].'</td>';
-         echo '<td>'.$row['checkout'].'</td>';
+        echo '<td>'.$row['check_in'].'</td>';
+         echo '<td>'.$row['check_out'].'</td>';
 
       echo '</tr>';
     }
@@ -26,3 +27,4 @@
     ?>
   </tbody>
 </table>
+

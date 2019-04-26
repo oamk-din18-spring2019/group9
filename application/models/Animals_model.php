@@ -48,24 +48,13 @@ class Animals_model extends CI_Model{
   return $this->db->affected_rows();
   }
 
-<<<<<<< HEAD
-  function get_animals(){
-      $this->db->select('*');
-      $this->db->from('animal');
-      return $this->db->get()->result_array();
-    }
-    function get_animals_id(){
-      $this->db->select('*');
-      $this->db->from('stays');
-      return $this->db->get()->result_array();
-    }
 
-=======
+
   function get_chosen($id){
   $this->db->select('*');
   $this->db->from('animal');
   $this->db->where('animal_id',$id);
   return $this->db->get()->result_array();
 }
->>>>>>> master
+
 }

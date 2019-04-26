@@ -4,73 +4,72 @@
     <meta charset="UTF-8">
     <title>RESERVATION</title>
     <!--<script src="<?php echo base_url('js/animalForm.js'); ?>" charset="utf-8"></script>-->
-   <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css'); ?>">
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css');  ?>">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
-<body>
-<!--
-<div class="container">
-  <img src="<?php echo base_url('pictures/sc-Ultra-suite-w-Dogs.jpg');?>" >
-</div>
--->
+<body class="body1">
+<!--<center>  <img src="<?php echo base_url('pictures/dog_cat.jpg');?>" ></center>-->
+<div class="bg"> 
+<div class=title><h1>PET REST</h1></div>
     <div class="main">
-    <h1>pet rest</h1><br>
     <?php
-    echo '<a href="'.site_url('login_owner/owner_login').'"><span class="btn"> Owner login</btn> </a>';
+    echo '<a href="'.site_url('login_owner/owner_login').'"><span class="btn btn-info"  id="login"> Owner login</btn> </a>';
     echo" <br>";
      ?>
-
-    <hr>
     </div>
 
     <form id=sourceForm action="<?php echo site_url('owner/transfer_animal_value');?>" method="post" class="name" style="height:100%;">
 
-        <fieldset >
-          <div class="animal"><legend>Pet</legend></div>
-      <div class="pet">
-
-        <label for="Cat">Cat</label>
-        <input id="Cat" type="radio" name="species" value="Cat">
-        <label for="Dog">Dog</label>
-        <input id="Dog" type="radio" name="species" value="Dog">
-    </div>
-        </fieldset>
-        <fieldset class="reservation">
-           <div class="room" ><legend>Booking details</legend></div>
+      <div class="reservation">
+           <div class="float">
+            <h2>Pet</h2>
+            <label for="Cat">Cat</label>
+            <input id="Cat" type="radio" name="species" value="Cat">
+            <label for="Dog">Dog</label>
+            <input id="Dog" type="radio" name="species" value="Dog"> 
+</div>   
+        <div class="book">
+            <h2>Booking Details</h2>
             <label for="date">Check-in date</label>
 
-            <input id="arrival" type="date" name="arrival" min="<?php echo date("Y-m-d");?>" >
+            <input id="arrival" type="date" name="arrival" min="<?php echo date("Y-m-d");?>" onchange=setMindate() >
             <label for="date">Check-out date</label>
-            <input id="depart" type="date" name="depart" min="<?php echo date("Y-m-d");?>" >
-            <br><br>
-            <input type="submit" name="" value="Book Now">
-            <br>
-        </fieldset>
+            <input id="depart" type="date" name="depart" min="" >
 
 
-    </form>
+             <button type="submit" name="">BOOK NOW!</button>
+</div>
+
+      </div>   
+      </form>
+    <div class="about">
+        <button type="button" class="btn" id="about" data-toggle="collapse" data-target="#demo">ABOUT</button>
+        <div id="demo" class="collapse">
+
+        <h3>Our prices</h3>
+          <i><b>Cats: </b>40e/day</i><br>
+          <i><b>Dogs: </b>50e/day</i><br>
+
+          <h3>About us</h3>
+          <i>We love your pets as they were ours</i><br>
+          <i>tel. 0x01237656</i>
+          <i>email info@petrest.com</i>
+        </div>
+    </div>
+
+
+
+    
 
         <br>
 
-    <hr>
 
-    <div class="container">
-    <button type="button" class="btn " data-toggle="collapse" data-target="#demo">About</button>
 
-      <div id="demo" class="collapse">
-
-        <h3>Our prices</h3>
-        <i><b>Cats: </b>40e/day</i><br>
-        <i><b>Dogs: </b>50e/day</i><br>
-
-        <h3>About us</h3>
-        <i>uhhhhhh</i>
-      </div>
-    </div>
-
+    
+</div>
 <!--
     <div class="btn-group">
 
@@ -133,4 +132,10 @@
     </div>
 -->
 
-<hr>
+<script>
+function setMindate(){
+  var min=document.getElementById('arrival').value;
+  console.log(min);
+  document.getElementById('depart').min=min;
+}
+</script>

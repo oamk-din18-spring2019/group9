@@ -1,7 +1,7 @@
-
-<h2> show Staff</h2>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css');  ?>">
+<center><h2 class="add">Staff</h2></center>
 <table border="1" class="table table-hover">
-  <thead>
+  <thead class="name">
     <tr><th>ID</th><th>Firstname</th><th>Lastname</th><th>Work hours</th><th>Edit</th></tr>
   </thead>
   <tbody>

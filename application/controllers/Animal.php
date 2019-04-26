@@ -6,13 +6,6 @@ class Animal extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-<<<<<<< HEAD
-    $this->load->model('Stay_model');
-    $this->load->model('Animals_model');
-
-  }
-=======
->>>>>>> master
 
     $this->load->model('Stay_model');
     $this->load->model('Animals_model');
@@ -43,6 +36,12 @@ class Animal extends CI_Controller{
 
   function add_animal(){
     //$this->load->model('Animals_model');
+    //price and $room_id
+    $this->load->model('Room_model');
+    //find free room
+    $id_free_room=$this->Room_model->get_free_id($_SESSION['arrival'], $_SESSION['depart'], $_SESSION['species']);
+
+    if($id_free_room!=null){
     $insert_animal=array(
       "animal_id"=>$this->input->post('animal_id'),
       "animal_name"=>$this->input->post('animal_name'),
@@ -53,10 +52,8 @@ class Animal extends CI_Controller{
       "animal_instruction"=>$this->input->post('animal_instruction')
     );
     $result1=$this->Animals_model->add_animal($insert_animal);
-    //price and $room_id
-    $this->load->model('Room_model');
-    //find free room
-    $id_free_room=$this->Room_model->get_free_id($_SESSION['arrival'], $_SESSION['depart'], $_SESSION['species']);
+
+    
 
 
   //  $stay_duration=$this->Room_model->stay_duration($id_free_room);
@@ -71,17 +68,23 @@ class Animal extends CI_Controller{
       "owner_id"=>$this->input->post('owner_id'),
       "stay_price"=>$price,
       "room_id"=>$id_free_room,
-      "checkin"=>$_SESSION['arrival'],
-      "checkout"=>$_SESSION['depart']
+      "check_in"=>$_SESSION['arrival'],
+      "check_out"=>$_SESSION['depart']
     );
     $result2=$this->Stay_model->add_stay($insert_stays);
     $page=$result1 ? 'animals/confirmation' : 'animals/error';
     $this->load->view($page);
-
+  }
+  else{
+    $page='animals/error';
+    $data['message']="No rooms available for these dates";
+    $this->load->view($page,$data);
+  }
+  
   }
 
   function calculate_price($duration, $room_id) {
-    if ($room_id < 10) {
+    if ($room_id < 11) {
       return 40 * $duration;
     }
     else  {
@@ -119,9 +122,14 @@ class Animal extends CI_Controller{
 }
 
 function add_new_animal(){
+   //price and $room_id
+   $this->load->model('Room_model');
+   //find free room
+   $id_free_room=$this->Room_model->get_free_id($this->input->post('check_in'), $this->input->post('check_out'), $this->input->post('animal_species'));
   //$this->load->model('Animals_model');
   $this->load->model('Stay_model');
   //$_SESSION['species']=$this->input->post('animal_species');
+  if($id_free_room!=null){
   $insert_animal=array(
     "animal_id"=>$this->input->post('animal_id'),
     "animal_name"=>$this->input->post('animal_name'),
@@ -132,10 +140,7 @@ function add_new_animal(){
     "animal_instruction"=>$this->input->post('animal_instruction')
   );
   $result1=$this->Animals_model->add_animal($insert_animal);
-  //price and $room_id
-  $this->load->model('Room_model');
-  //find free room
-  $id_free_room=$this->Room_model->get_free_id($this->input->post('check_in'), $this->input->post('check_out'), $this->input->post('animal_species'));
+ 
 
 
 //  $stay_duration=$this->Room_model->stay_duration($id_free_room);
@@ -156,7 +161,13 @@ function add_new_animal(){
   $result2=$this->Stay_model->add_stay($insert_stays);
   $page=$result1 ? 'animals/confirmation_of_new_animal' : 'animals/error';
   $this->load->view($page);
-
+  }
+  else{
+    $page='animals/error_owner';
+    $data['message']="No rooms available for these dates";
+    $this->load->view($page,$data);
+  }
+  
 }
 
   function show_edit($id){

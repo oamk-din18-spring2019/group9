@@ -16,7 +16,7 @@ class Room_model extends CI_Model{
   }
 
   function stay_duration($room_id){
-    $this->db->select('DATEDIFF(checkout,checkin) as duration');
+    $this->db->select('DATEDIFF(check_out,check_in) as duration');
     $this->db->from('stays');
     $this->db->where('owner_id', $room_id);
     return $this->db->get()->row('duration');
@@ -43,7 +43,7 @@ class Room_model extends CI_Model{
     $this->db->where('animal_id is NULL')
     ->or_where('check_in >',$depart)
     ->or_where ('check_out <',$arrival);*/
-    $this->db->where("room.room_id $id_ehto  AND ( animal_id  is NULL OR  checkin  > '$depart' OR  checkout  < '$arrival' )");
+    $this->db->where("room.room_id $id_ehto  AND ( animal_id  is NULL OR  check_in  > '$depart' OR  check_out  < '$arrival' )");
 
     //$this->db->where('check_out>',$depart);
     //$this->db->or_where('check_in<',$arrival);

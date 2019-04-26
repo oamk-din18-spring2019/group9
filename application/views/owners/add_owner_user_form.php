@@ -1,5 +1,5 @@
-
-<h3>Create account</h3>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css');  ?>">
+<center><h2 class="add">Create account</h2></center>
 
 <p>
 <form class="" action="<?php  echo site_url('owner/add_owner_user'); ?>" method="post">

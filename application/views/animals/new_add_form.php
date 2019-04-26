@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css');  ?>">
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   </head>
   <body>
+
+<script>
+function setMindate(){
+  var min=document.getElementById('check_in').value;
+  console.log(min);
+  document.getElementById('check_out').min=min;
+}
+</script>
+
     <?php
     if (isset($_SESSION['owner_id'])) {
       $active_id = $_SESSION['owner_id'];
@@ -15,8 +25,8 @@
       $active_id = $new_owner_id;
     }
      ?>
-    <form class="" action="<?php echo site_url('animal/add_new_animal'); ?>" method="post">
-      <div class="room"><legend>Add your pet's information</legend></div><br>
+    <center><form class="" action="<?php echo site_url('animal/add_new_animal'); ?>" method="post">
+      <div class="room"><legend class="add">Add your pet's information</legend></div><br>
 
       <label for="Cat">Cat</label>
       <input id="Cat" type="radio" name="animal_species" value="Cat"><br>
@@ -24,9 +34,9 @@
       <input id="Dog" type="radio" name="animal_species" value="Dog"> <br><br>
 
        <label for="date">Check-in date</label><br>
-       <input id="checkin" type="date" name="checkin" min="2019-01-01" required><br>
+       <input id="check_in" type="date" name="check_in" min="<?php echo date("Y-m-d");?>" onchange=setMindate()  required><br>
        <label for="date">Check-out date</label><br>
-       <input id="checkout" type="date" name="checkout" min="2019-01-01" required><br>
+       <input id="check_out" type="date" name="check_out" min="{{min}}" required><br>
 
       <input type="hidden" name="owner_id" value="<?php echo $active_id; ?>">
 
@@ -51,10 +61,11 @@
       <textarea id="animal_instruction" name="animal_instruction"></textarea>
       <br><br>
 
-      <a href="<?php echo site_url('owner/index');?>"><span class="btn btn-primary">Cancel</span></a>
+      <a href="<?php echo site_url('owner/index');?>"><span class="btn"><button>Cancel</button></span></a>
       <input type="submit" name="" value="Confirm">
 
 
-    </form>
+    </form></center>
+
   </body>
 </html>

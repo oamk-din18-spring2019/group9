@@ -1,37 +1,378 @@
 a:link, a:visited {
-  color: black;
+  color: #8585ad;
   padding: 14px 25px;
   text-decoration: none;
-}
+
+
+} /*
 a:hover, a:active {
   text-decoration: none;
   color: black;
 
 }
+*/
 
-.container {
-  position: static;
+
+.bg{
+
+  background-image: url('../pictures/dog_cat.jpg');
+height: 580px;
+
+
+  background-position: center;
+
 }
 
+.centered{
+  background-color:#e1e1ea ;
+}
 
-
+/*
 img {
-  width: 100%;
+  width: 95%;
+  height:700px;
+  position: center;
+
+}
+*/
+.main{
+
+
+    position:  absolute;
+    bottom:550px;
+
+
+
+
 
 }
 
+.title{
+  font-family: 'Times New Roman', Times, sans-serif;
+font-size: 100px;
+  position: absolute;
+  bottom:550px;
+  margin-left: 550px;
+  margin-right: 100px;
+  color: #e1e1ea ;
+  padding: 10px;
+font-style: inherit;
+height : 50px;
+
+
+}
+
+.reservation{
+   font-size:20px;
+font-weight: bold;
+  font-family:'Times New Roman', Times, serif;
+  position: absolute;
+  margin-left: 140px;
+  margin-right: auto;
+  margin-top: 430px;
+  margin-bottom: 10px;
+  background-color: #e1e1ea;
+  opacity: 0.7;
+  padding: 5px;
+  border: 3px;
+  border-bottom-color: black;
+  border-style: solid;
+  height: 120px;
+}
+
+.float {
+
+float: left;
+margin-right: 40px;
+}
+.book{
+  float:right;
+}
+.btn_book {
+
+}
+#about{
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  width:1200px;
+  margin-bottom: 30px;
+  color: black;
+  background-color: #e1e1ea;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items:stretch;
+  margin-left: 30px;
+
+}
+#demo{
+
+  bottom :0;
+  left: 5;
+margin-bottom: -130px;
+text-align: center;
+
+
+}
+#login{
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  background-color: #e1e1ea;
+  color: black;
+  border-color: #e1e1ea;
+
+}
+
+
+.staff_login{
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  margin-left: 1130px;
+  margin-top:-2px;
+  color: #8585ad ;
+}
+
+.add{
+  color: #8585ad;
+  margin-top: 30px;
+  position :center ;
+  font-size: 40px;
+}
+
+.title1{
+
+  border-style: solid;
+  background-color: #b3b3cc ;
+  border: 1px;
+  color: #8585ad;
+  height:100px;
+  text-align: center;
+  font-size: 40px;
+
+}
+.body1{
+  background-color: #e1e1ea;
+}
+
+/*input {
+  background-color: #f0f0f5;
+  width:200px;
+  height:30px;
+} */
+textarea{
+  background-color: #f0f0f5;
+  width:300px;
+}
+
+.done{
+  border:2px;
+  border-style: solid;
+  background-color:
+  font-size:25px;
+  font-family: sans-serif;
+  color:#47476b;
+  width: 500px;
+  height: 80px;
+  margin-top: 200px;
+}
+
+p{
+
+  font-size:25px;
+  font-family: sans-serif;
+  color:#71718d;
+}
+.logino{
+
+  font-size: 20px;
+  font-family:sans-serif;
+  margin-top: 100px;
+
+}
+label {
+
+  color:#47476b;
+}
+
+
+ .btn {
+   color: #47476b;
+
+ }
+ .name{
+   color:#47476b;
+
+ }
+
+ button{
+  background-color: #f0f0f5;
+ }
+
+ tbody,tr,td {
+   border-color: black;
+   border-style: solid;
+   border: 1px;
+
+ }
+
+ .account{
+   font-size: 25px;
+   color: #47476b;
+ }
+
+
+
+
+
+
+
+
+/*a:link, a:visited {
+  color: rgb(180, 144, 100);
+  padding: 14px 25px;
+  text-decoration: none;
+  
+
+} /*
+a:hover, a:active {
+  text-decoration: none;
+  color: black;
+
+
+}
+
+body{
+
+  height: 100%;
+  background-color: bisque;
+ 
+}
+
+.bg{
+  
+  background-image: url('../pictures/dog_cat.jpg');
+ height: 550px;
+
+  
+  background-position: center;
+  
+}
 
 
 /*
+img {
+  width: 95%;
+  height:700px;
+  position: center;
+
+}
+*
 .main{
-    margin-right: auto;
-    margin-left: auto;
-    left:0%;
-    position: static;
+    
+    
+    position:  absolute;
+    bottom:550px;
+    
+    
+    
+    
 
 }
 
+.title{
+  font-family: 'Times New Roman', Times, serif;
+font-size: 100px;
+  position: absolute;
+  bottom:550px;
+  margin-left: 550px;
+  margin-right: 100px;
+  color: #EDDBCD ;
+  padding: 10px;
+font-style: inherit;
+height : 50px;
+font-weight: BOLD;
+ 
+
+}
+
+.reservation{
+   font-size:20px;
+ font-weight: bold;
+  font-family:'Times New Roman', Times, serif;
+  position: absolute;
+  margin-left: 170px;
+  margin-right: auto;
+  margin-top: 400px;
+  margin-bottom: 10px;
+  background-color: #EDDBCD ;
+  opacity: 0.7;
+  padding: 5px;
+  border: 3px;
+  border-bottom-color: black;
+  border-style: solid;
+  height: 120px;
+}
+
+.float {
+
+float: left;
+margin-right: 40px;
+}
+.book{
+  float:right;
+}
+.btn_book {
+  
+}
+#about{
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  width:100%;
+  margin-bottom: 20px;
+  color: black;
+  background-color: bisque;
+  border-color: bisque;
+  border:1px;
+  border-style: solid;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items:stretch;
+
+
+}
+#demo{
+  
+  font-family:'Times New Roman', Times, serif;
+  text-align: center;
+ 
+  bottom :0;
+  left: 5;
+ margin-bottom: -130px;
+ 
+
+}
+#login{
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  background-color: bisque;
+  color: black;
+  border-color: bisque;
+  
+}
+
+
+
+.staff_login{
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  margin-left: 1100px;
+  margin-top:35px;
+  color: brown;
+}
+/*
 .animal{
+  position: absolute;
  font-weight: bold;
     font-style: italic;
     font-style: 20px ;
@@ -41,6 +382,7 @@ color:white;
 font-family:'Times New Roman', Times, serif;
 }
 
+/*
 .pet{
     font-style: italic;
     font-style: 20px ;
@@ -77,23 +419,25 @@ input{
     color:white;
 
 
-}
+}*/
+/*
 button{
-    width:350px;
+    width:300px;
     left:37%;
-    background-color: lightyellow ;
-    position: center;
+   
+    left:230px;
     border:none;
     position:relative;
-    height:35px;
-    font-size:30px;
+    height:50px;
+    font-size:20px;
     padding:0 2em;
     cursor:pointer;
     transition:800ms ease all;
     outline:none;
+  
   }
   button:hover{
-    background: lightskyblue;
+    background: cornflowerblue;
     color:black;
   }
 
@@ -102,9 +446,15 @@ button{
     top:inherit;
     left:0;
     bottom:0;
+    height:35px;
+    font-size:30px;
   }
   button:hover:before,button:hover:after{
     width:100%;
     transition:800ms ease all;
+    height:35px;
+    font-size:30px;
   }
 */
+  
+

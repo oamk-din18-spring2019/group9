@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/form.css');  ?>">
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <center><div class="title1"><h1>PET REST</h1></div></center>
   </head>
   <body>
     <center>
       <br><br><br><br><br>
-    <div class="centered">
-      <h3>Staff login</h3>
+      <div class="add"><h3>Staff login</h3></div>
+    <div class="logino">
+      
       <form class="" action="<?php echo site_url('login_staff/login'); ?>" method="post">
         <label for="">username</label><br>
         <input type="text" name="staff_username" value="" required><br>
