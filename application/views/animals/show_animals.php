@@ -3,7 +3,7 @@
 <table border="1" class="table table-hover">
   <thead class="name">
 
-    <tr><th>ID</th><th>Name</th><th>Species</th><th>Description</th><th>Food</th><th>Medical details</th><th>instruction</th>
+    <tr><th>ID</th><th>Name</th><th>Species</th><th>Description</th><th>Food</th><th>Medical details</th><th>Instruction</th>
       <th>Edit</th></tr>
 
   </thead>
