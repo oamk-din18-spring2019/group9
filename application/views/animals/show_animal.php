@@ -2,7 +2,7 @@
 <center><h2 class="add">animal</h2></center>
 <table border="1" class="table table-hover">
   <thead class="name">
-    <tr><th>ID</th><th>Name</th><th>Species</th><th>Description</th><th>Food</th><th>Medical details</th><th>instruction</th>
+    <tr><th>ID</th><th>Name</th><th>Species</th><th>Description</th><th>Food</th><th>Medical details</th><th>Instruction</th>
       <th>Check-in date</th><th>Check-out date</th></tr>
   </thead>
   <tbody>

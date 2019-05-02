@@ -24,7 +24,7 @@
       <input type="text" name="lname" value=""required><br>
 
       <label for="">Phone number</label><br>
-      <input type="number" name="phone" value=""required><br>
+      <input type="number" name="phone" value="" min="0" required><br>
 
       <label for="">Date of birth</label><br>
       <input type="date" name="birthday" value="" required><br>
